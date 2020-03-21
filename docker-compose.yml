@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+      target: base_with_node_modules
+    ports:
+      - "3000:3000"
+      - "9222:9222"
+    command:
+      - |
+        npm start
+    entrypoint: "/bin/bash -c"
+    volumes:
+      - ./ui/src:/app/src
