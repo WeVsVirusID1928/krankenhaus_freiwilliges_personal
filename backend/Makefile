@@ -16,3 +16,25 @@ help:
 package:
 	mvn package 
 	./scripts/build-docker-image.sh
+
+# make start-postgresql 
+#  Start the dependency postgres.
+
+.PHONY: start-postgresql
+start-postgresql:
+	scripts/start-postgresql.sh
+
+# make stop-postgresql 
+#  Stop the dependency postgres.
+
+.PHONY: stop-postgresql
+stop-postgresql:
+	scripts/stop-postgresql.sh
+
+# make run 
+#  Starts the dependency and after that starts the application.
+
+.PHONY: run
+run: 
+	make start-postgresql
+	mvn spring-boot:run
