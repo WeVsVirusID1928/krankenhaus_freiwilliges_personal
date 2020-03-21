@@ -1,0 +1,27 @@
+@import "../01_base/variables";
+
+@mixin mobile {
+  @media (max-width: $screenSM) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @include mobile {
+    @media (max-width: $screenXS) {
+      @content;
+    }
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $screenMD) and (min-width: $screenSM + 1px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $screenLG) {
+    @content;
+  }
+}

@@ -1,0 +1,63 @@
+@import "variables";
+
+.layout {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  margin: 0 (-($spacing) / 2);
+
+  &--no-indent {
+    margin: 0 !important;
+  }
+  &--wrap {
+    flex-wrap: wrap !important;
+  }
+  &--center {
+    justify-content: center;
+  }
+  .flex {
+    align-items: stretch;
+
+    &--v-stretch {
+      align-items: stretch;
+      display: flex;
+    }
+    &--v-center {
+      align-items: center;
+      display: flex;
+    }
+    &--no-padding {
+      padding: 0 !important;
+    }
+    &--overflow-hidden {
+      overflow: hidden;
+    }
+  }
+
+  @each $size, $width in $grid-breakpoints {
+    @media all and (min-width: #{$width}) {
+      $n: $grid-columns;
+      @while $n > 0 {
+        .flex.#{$size}#{$n} {
+          flex-basis: $n / $grid-columns * 100%;
+          flex-grow: 0;
+          max-width: $n / $grid-columns * 100%;
+          padding: 0 $spacing / 2;
+        }
+        .flex.order-#{$size}#{$n} {
+          order: $n;
+        }
+        $n: $n - 1;
+      }
+
+      $m: $grid-columns;
+      @while $m >= 0 {
+        .flex.offset-#{$size}#{$m} {
+          // Offsets can only ever work in row layouts
+          margin-left: $m / $grid-columns * 100%;
+        }
+        $m: $m - 1
+      }
+    }
+  }
+}

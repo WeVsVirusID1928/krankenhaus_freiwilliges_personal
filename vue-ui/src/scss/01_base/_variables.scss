@@ -1,0 +1,36 @@
+/* */
+$backgroundColor: #eff3f6;
+$inputBackgroundColor: #d4d8db;
+$themeColor: #00c0ff;
+
+$successColor: #239F5D;
+$errorColor: #b01111;
+$textColor: #000;
+$textColorInv: #fff;
+
+$defaultFontFamily: 'Open Sans', sans-serif;
+$defaultFontSize: 18px;
+$defaultLineHeight: 27px;
+$defaultFontSizeHeader: 20px;
+$defaultLineHeightHeader: 30px;
+
+
+$spacing: 24px;
+
+$maxPageWidth: 1200px;
+
+$screenXS: 320px;
+$screenSM: 480px;
+$screenMD: 767px;
+$screenLG: 992px;
+$screenXL: 1199px;
+
+$grid-columns: 12;
+
+$grid-breakpoints: (
+        'xs': 0,
+        'sm': 600px,
+        'md': 960px,
+        'lg': 1280px,
+        'xl': 1920px
+) !default;

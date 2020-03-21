@@ -1,0 +1,10 @@
+@import "../01_base/variables";
+
+.card-button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: $defaultFontSize;
+  line-height: $defaultLineHeight;
+
+}

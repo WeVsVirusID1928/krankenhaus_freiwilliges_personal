@@ -1,0 +1,110 @@
+@import "../01_base/variables";
+
+.text-field {
+  position: relative;
+  transition: all .3s;
+
+  input {
+    background: $backgroundColor;
+    border: 2px solid $textColor;
+    color: inherit;
+    outline: none !important;
+    padding: 26px 10px 12px 10px;
+    transition: all .3s;
+    width: 100%;
+  }
+  label {
+    color: $textColor;
+    font-size: 80%;
+    left: 1px;
+    padding: 0 10px;
+    position: absolute;
+    text-overflow: ellipsis;
+    top: 5px;
+    transition: all .3s;
+    white-space: nowrap;
+  }
+  &__info {
+    color: $textColor;
+    display: flex;
+    font-size: 80%;
+    margin: 5px 0 10px 0;
+    min-height: 16px;
+    padding: 0 10px;
+  }
+  &__hint, &__error-messages {
+    flex-grow: 1;
+    text-overflow: ellipsis;
+  }
+  &__counter {
+    flex-shrink: 0;
+    text-align: right;
+  }
+  &__error-messages {
+    color: $errorColor;
+    flex-grow: 1;
+    font-weight: bold;
+    display: none;
+  }
+  &__prepend-icon {
+    height: 25px;
+    left: 10px;
+    position: absolute;
+    top: 15px;
+    width: 25px;
+  }
+  &__append-icon {
+    cursor: pointer;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 25px;
+  }
+
+  &--prepend-icon {
+    label {
+      padding-left: 40px;
+    }
+    input {
+      padding-left: 40px;
+    }
+    .text-field__prepend-icon {
+      display: block;
+    }
+  }
+  &--append-icon {
+    input {
+      padding-right: 40px;
+    }
+    .text-field__append-icon {
+      display: block;
+    }
+  }
+  &--focused {
+    input {
+      background: $inputBackgroundColor;
+      border-color: $themeColor;
+      box-shadow: 1px 1px 0 $themeColor, -1px -1px 0 $themeColor, 1px -1px 0 $themeColor, -1px 1px 0 $themeColor;
+    }
+  }
+  &--error {
+    input {
+      border-color: $themeColor;
+    }
+    label {
+      color: $themeColor;
+    }
+    .text-field__hint {
+      display: none;
+    }
+    .text-field__error-messages {
+      display: block;
+    }
+  }
+  &--hide-details {
+    .text-field__info {
+      display: none;
+    }
+  }
+}

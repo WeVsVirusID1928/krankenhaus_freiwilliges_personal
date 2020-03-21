@@ -1,0 +1,15 @@
+@import "../01_base/variables";
+
+.btn {
+  background: $themeColor;
+  color: $textColorInv;
+  cursor: pointer;
+  padding: $spacing / 2 $spacing;
+  position: relative;
+  text-align: center;
+  transition: all .3s;
+
+  &:hover {
+    background: darken($themeColor, 10%);
+  }
+}
