@@ -45,7 +45,6 @@ public class UserController {
         return new Gson().toJson(userService.getAllUsers());
     }
 
-
     @RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public String createUser(@RequestBody User user) {
         LOGGER.debug("Processing user create:" + user.toString());
