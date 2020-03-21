@@ -1,6 +1,7 @@
 package de.howtohelppeople.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Setter
 public class UserEntity {
     @Id
+    @GeneratedValue
     private Long id;
 
     private String userName;

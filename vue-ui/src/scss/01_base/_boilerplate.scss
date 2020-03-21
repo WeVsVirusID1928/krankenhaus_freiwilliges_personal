@@ -1,0 +1,30 @@
+@import "../01_base/variables";
+@import "../01_base/mixins";
+
+body {
+  background:$backgroundColor;
+  color: $textColor;
+  font-family: $defaultFontFamily;
+  font-size: $defaultFontSize;
+  line-height: $defaultLineHeight;
+  margin: 0;
+  padding: 0;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  max-width: $maxPageWidth;
+  padding: $spacing;
+  width: 100%;
+}
+
+.margin-top {
+  margin-top: $spacing;
+}
