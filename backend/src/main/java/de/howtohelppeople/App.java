@@ -1,4 +1,4 @@
-package java.de.howtohelppeople;
+package de.howtohelppeople;
 
 /**
  * Hello world!
