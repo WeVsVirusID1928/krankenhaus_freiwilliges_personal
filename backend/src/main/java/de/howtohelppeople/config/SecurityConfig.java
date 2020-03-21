@@ -38,7 +38,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/")
                 .permitAll()
                 .and()
-                .rememberMe();
+                .rememberMe()
+                .and().csrf().disable();  // required to make posts work without csrf token
     }
 
     @Override
