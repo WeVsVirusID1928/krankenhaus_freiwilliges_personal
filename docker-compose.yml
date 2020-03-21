@@ -1,23 +1,21 @@
 version: "3.7"
 
 services:
-  ui:
+  vue-ui:
     build:
-      context: ./ui
+      context: ./vue-ui
       dockerfile: Dockerfile
-      target: base_with_node_modules
     depends_on:
       - temporary_backend
     ports:
-      - "3000:3000"
-      - "9222:9222"
+      - "8080:8080"
     command:
       - |
         npm ci
-        npm start
+        npm run serve
     entrypoint: "/bin/bash -c"
     volumes:
-      - ./ui/src:/app/src
+      - ./vue-ui/src:/app/src
 
   temporary_backend:
     build:
