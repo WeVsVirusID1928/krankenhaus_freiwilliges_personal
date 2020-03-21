@@ -8,6 +8,7 @@ _find_pair() {
   if [ -n "${name}" ] ; then
     cat <<EOF |grep -i "${name}" | head -1
 Philipp Ludewig <diesdas@philippludewig.de>
+Rahul Rakshit <rahul.rakshit@posteo.net>
 
 EOF
   else
