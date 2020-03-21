@@ -1,3 +1,13 @@
 **/.idea/**
 ui/node_modules/
 temporary_backend/node_modules/
+code.style.schemes.xml
+debugger.xml
+github.xml
+studioFlags.xml
+vcs.xml
+markdown.xml
+editor.xml
+colors.scheme.xml
+_windows/
+codestyles/
