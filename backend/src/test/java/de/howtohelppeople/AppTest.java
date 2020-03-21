@@ -1,4 +1,4 @@
-package java.de.app;
+package de.howtohelppeople;
 
 
 import org.junit.jupiter.api.Test;

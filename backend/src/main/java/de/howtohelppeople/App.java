@@ -1,4 +1,4 @@
-package de.app;
+package de.howtohelppeople;
 
 /**
  * Hello world!

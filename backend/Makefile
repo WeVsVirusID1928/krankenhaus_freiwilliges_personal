@@ -5,7 +5,7 @@
 
 .PHONY: help
 help:
-	@printf 'Backend\n\n'
+	@printf 'Backend of HowToHelp\n\n'
 	@awk -f Makefile.autodoc.awk Makefile
 	@printf '\n'
 
