@@ -10,6 +10,7 @@ _find_pair() {
 Philipp Ludewig <diesdas@philippludewig.de>
 Rahul Rakshit <rahul.rakshit@posteo.net>
 Georg Orfali <georg.orfali20@gmail.com>
+Mona Fenzl <mona.fenzl@web.de>
 EOF
   else
     echo "tbd"
