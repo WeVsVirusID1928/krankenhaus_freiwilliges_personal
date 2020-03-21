@@ -8,4 +8,4 @@ services:
     environment:
       POSTGRES_USER: howtohelppeople
       POSTGRES_DB: howtohelppeople
-      POSTGRES_PASSWORD: howtohelpeople!2020
+      POSTGRES_PASSWORD: howtohelppeople!2020
