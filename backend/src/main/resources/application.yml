@@ -21,3 +21,6 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
+  session:
+    jdbc:
+      initialize-schema: always
