@@ -17,7 +17,7 @@ EOF
 
 _format_issue() {
   local issue="$1"
-  local jira_board="NW"
+  local jira_board="KP"
 
   if [ -z "${issue}" ] ; then
     echo "${jira_board}-???"
