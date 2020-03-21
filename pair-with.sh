@@ -11,7 +11,8 @@ Philipp Ludewig <diesdas@philippludewig.de>
 Rahul Rakshit <rahul.rakshit@posteo.net>
 Georg Orfali <georg.orfali20@gmail.com>
 Mona Fenzl <mona.fenzl@web.de>
-Björn Eberhardt
+Björn Eberhardt <ichhaltemichnichtankonventionen@eb.de>
+
 EOF
   else
     echo "tbd"

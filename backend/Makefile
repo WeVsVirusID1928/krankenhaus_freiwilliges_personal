@@ -9,13 +9,20 @@ help:
 	@awk -f Makefile.autodoc.awk Makefile
 	@printf '\n'
 
+# make docker-package 
+#  Builds the jar with maven and then the docker container.
+
+.PHONY: docker-package
+docker-package:
+	mvn package 
+	./scripts/build-docker-image.sh
+
 # make package 
 #  Builds the jar with maven and then the docker container.
 
 .PHONY: package
 package:
-	mvn package 
-	./scripts/build-docker-image.sh
+	mvn package spring-boot:repackage
 
 # make start-postgresql 
 #  Start the dependency postgres.
