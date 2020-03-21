@@ -9,7 +9,7 @@ _find_pair() {
     cat <<EOF |grep -i "${name}" | head -1
 Philipp Ludewig <diesdas@philippludewig.de>
 Rahul Rakshit <rahul.rakshit@posteo.net>
-
+Georg Orfali <georg.orfali20@gmail.com>
 EOF
   else
     echo "tbd"
