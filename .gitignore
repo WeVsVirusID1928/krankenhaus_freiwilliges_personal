@@ -1,1 +1,3 @@
 **/.idea/**
+ui/node_modules/
+temporary_backend/node_modules/

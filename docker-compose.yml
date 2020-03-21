@@ -6,6 +6,8 @@ services:
       context: ./ui
       dockerfile: Dockerfile
       target: base_with_node_modules
+    depends_on:
+      - temporary_backend
     ports:
       - "3000:3000"
       - "9222:9222"
@@ -15,3 +17,17 @@ services:
     entrypoint: "/bin/bash -c"
     volumes:
       - ./ui/src:/app/src
+
+  temporary_backend:
+    build:
+      context: ./temporary_backend
+      dockerfile: Dockerfile
+    ports:
+      - "1357:1357"
+      - "1369:1369"
+    entrypoint: "/bin/bash -c"
+    volumes:
+      - ./temporary_backend/:/app
+    command:
+      - |
+        npm run dev

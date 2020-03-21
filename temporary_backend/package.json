@@ -1,0 +1,19 @@
+{
+  "name": "attach_node_server",
+  "version": "0.1.0",
+  "description": "attaching to docker node server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node node_modules/nodemon/bin/nodemon.js --inspect=0.0.0.0:1369 index.js"
+  },
+  "author": "Rahul Rakshit",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
