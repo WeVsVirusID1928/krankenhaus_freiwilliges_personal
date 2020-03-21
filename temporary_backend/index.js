@@ -28,10 +28,7 @@ app.post("/postings", (req, res) => {
     "utf8"
   );
 
-  const { postings: newPostings } = JSON.parse(
-    fs.readFileSync("./db.json", "utf8")
-  );
-  res.json({ postings: newPostings });
+  res.status(201).end();
 });
 
 app.listen(port, () => console.log(`🚀 App listening on port ${port}.`));
