@@ -1,5 +1,7 @@
 package de.howtohelppeople.controllers;
 
+import com.google.gson.Gson;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +40,13 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserStats(Id));
     }
 
-    @RequestMapping(value = "/user/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String handleUserCreateForm() {
+        return new Gson().toJson(userService.getAllUsers());
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public String handleUserCreateForm(@RequestBody User user) {
         LOGGER.debug("Processing user create:" + user.toString());
 
