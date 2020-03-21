@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
-export function usePingStatus() {
-  const [data, setData] = useState(null);
+export function usePostings() {
+  const [postings, setPostings] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:1357/ping')
+    fetch('http://localhost:1357/postings')
       .then(response => response.json())
-      .then(apiResponse => setData(apiResponse))
+      .then(apiResponse => setPostings(apiResponse))
       .then(() => setLoading(false))
       .catch(err => {
         setLoading(false);
@@ -16,5 +16,5 @@ export function usePingStatus() {
       });
   }, []);
 
-  return [data, loading, error];
+  return [postings, loading, error];
 }
