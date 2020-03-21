@@ -13,8 +13,8 @@ app.get("/ping", (_, res) => {
 });
 
 app.get("/postings", (_, res) => {
-  const meinZeug = JSON.parse(fs.readFileSync("./db.json", "utf8"));
-  res.json({ zeug: meinZeug });
+  const { postings } = JSON.parse(fs.readFileSync("./db.json", "utf8"));
+  res.json({ postings });
 });
 
 app.listen(port, () => console.log(`🚀 App listening on port ${port}.`));
