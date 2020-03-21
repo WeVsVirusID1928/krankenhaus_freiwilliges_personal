@@ -1,27 +1,8 @@
 import React, { FormEvent, useState, useEffect } from 'react';
-
-interface Posting {
-  title: string;
-  time: string;
-  comment: string;
-  contact: string;
-}
+import { usePostings } from './usePostings';
 
 function App() {
-  const [postings, setPostings] = useState<Posting[] | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch('http://localhost:1357/postings')
-      .then(response => response.json())
-      .then(apiResponse => setPostings(apiResponse.postings))
-      .then(() => setLoading(false))
-      .catch(err => {
-        setLoading(false);
-        setError(err);
-      });
-  }, []);
+  const [postThenGetPosting, postings, loading, error] = usePostings();
 
   const [title, setTitle] = useState('');
   const [time, setTime] = useState('');
@@ -31,26 +12,11 @@ function App() {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    fetch('http://localhost:1357/postings', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ title, time, comment, contact })
-    })
-      .then(response => response.json())
-      .then(apiResponse => setPostings(apiResponse.postings))
-      .then(() => setLoading(false))
-      .catch(err => {
-        setLoading(false);
-        setError(err);
-      })
-      .then(() => {
-        setTitle('');
-        setTime('');
-        setContact('');
-        setComment('');
-      });
+    postThenGetPosting({ title, time, comment, contact });
+    setTitle('');
+    setTime('');
+    setContact('');
+    setComment('');
   };
 
   if (loading) {
