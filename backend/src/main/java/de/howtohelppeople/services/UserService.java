@@ -17,6 +17,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    public UserEntity create(UserEntity user) {
+        return userRepository.save(user);
+    }
+
     public String getUserStats(Long id) {
         UserEntity user = userRepository.findById(id);
         String result = "{ID : " + user.getId().toString() + ", Name: " + user.getUserName() + ", email:" + user.getEmail() + " }";
