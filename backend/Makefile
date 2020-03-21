@@ -37,4 +37,4 @@ stop-postgresql:
 .PHONY: run
 run: 
 	make start-postgresql
-	mvn spring-boot:run
+	scripts/run-application.sh local
