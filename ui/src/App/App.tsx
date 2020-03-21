@@ -1,8 +1,10 @@
 import React from 'react';
-import { usePingStatus } from './usePingStatus';
+import { usePostings } from './usePostings';
 
 function App() {
-  const [data, loading, error] = usePingStatus();
+  const [postings, loading, error] = usePostings();
+
+  console.log(postings);
 
   if (loading) {
     return <p>loading...</p>;
@@ -13,7 +15,11 @@ function App() {
   return (
     <>
       <h3>This is what the server said:</h3>
-      <pre>{JSON.stringify(data)}</pre>
+      <ul>
+        {(postings as any).zeug.postings.map((posting: any) => {
+          return <li>{JSON.stringify(posting)}</li>;
+        })}
+      </ul>
     </>
   );
 }

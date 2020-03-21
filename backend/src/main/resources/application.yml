@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: howtohelppeople
+  resources:
+    add-mappings: false
+  datasource:
+    username: howtohelppeople
+    password: ${DATABASE__PSQL_PASSWORD}
+    platform: postgres
+    continueOnError: true
+    url: jdbc:postgresql://localhost:5432/howtohelppeople
+  jpa:
+    database: postgresql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true

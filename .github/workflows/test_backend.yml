@@ -21,4 +21,4 @@ jobs:
       with:
         java-version: 11
     - name: Run all tests with Maven
-      run: ./backend/scripts/run-all-tests.sh
+      run: cd backend ; ./scripts/run-all-tests.sh
