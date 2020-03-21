@@ -13,6 +13,7 @@ services:
       - "9222:9222"
     command:
       - |
+        npm ci
         npm start
     entrypoint: "/bin/bash -c"
     volumes:
@@ -30,4 +31,5 @@ services:
       - ./temporary_backend/:/app
     command:
       - |
+        npm ci
         npm run dev
