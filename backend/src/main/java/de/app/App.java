@@ -1,4 +1,4 @@
-package de.app..app;
+package de.app;
 
 /**
  * Hello world!
