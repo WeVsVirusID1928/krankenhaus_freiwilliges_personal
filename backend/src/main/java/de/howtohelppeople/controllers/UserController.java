@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import de.howtohelppeople.services.UserService;
 
 @Controller
-@RequestMapping(path = "/book")
+@RequestMapping(path = "/user")
 @ResponseBody
 public class UserController {
     private final UserService userService;
