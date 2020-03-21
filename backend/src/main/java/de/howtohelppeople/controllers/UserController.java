@@ -17,9 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import de.howtohelppeople.entities.UserEntity;
+import de.howtohelppeople.model.User;
 import de.howtohelppeople.services.UserService;
-import lombok.Getter;
-import lombok.Setter;
 
 @Controller
 @RequestMapping(path = "/user")
@@ -42,12 +41,13 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String handleUserCreateForm() {
+    public String getAllUsers() {
         return new Gson().toJson(userService.getAllUsers());
     }
 
+
     @RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String handleUserCreateForm(@RequestBody User user) {
+    public String createUser(@RequestBody User user) {
         LOGGER.debug("Processing user create:" + user.toString());
 
         try {
@@ -64,13 +64,5 @@ public class UserController {
             LOGGER.warn("Exception occurred when trying to save the user", e);
             return "{\"error\": \"" + e.getMessage() + "\"}";
         }
-    }
-
-    @Getter
-    @Setter
-    private class User {
-        private String userName;
-        private String email;
-        private String passwordPlain;
     }
 }
