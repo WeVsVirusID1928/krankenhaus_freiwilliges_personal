@@ -7,9 +7,9 @@
   padding: $spacing / 2 $spacing;
   position: relative;
   text-align: center;
-  transition: all .3s;
+  transition: $defaultTransition;
 
   &:hover {
-    background: darken($themeColor, 10%);
+    background: $themeColorDarken;
   }
 }

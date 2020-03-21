@@ -1,0 +1,40 @@
+@import "../01_base/variables";
+
+.checkbox {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+
+  &__box {
+    border: 2px solid $themeColor;
+    height: $defaultFontSize * 1.2;
+    position: absolute;
+    transition: $defaultTransition;
+    width: $defaultFontSize * 1.2;
+  }
+  input {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+  }
+  &__label {
+    color: $textColor;
+    font-size: 80%;
+    left: 1px;
+    padding-left: $defaultLineHeight + ($spacing / 2);
+    text-overflow: ellipsis;
+    transition: $defaultTransition;
+    white-space: nowrap;
+  }
+
+  &--checked {
+    .checkbox__box {
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg) translate(25%, -35%);
+      transform-origin: 50%;
+      width: $defaultFontSize * 1.2 / 2;
+    }
+  }
+}

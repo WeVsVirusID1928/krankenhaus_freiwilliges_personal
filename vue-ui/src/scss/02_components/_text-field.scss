@@ -2,7 +2,7 @@
 
 .text-field {
   position: relative;
-  transition: all .3s;
+  transition: $defaultTransition;
 
   input {
     background: $backgroundColor;
@@ -10,7 +10,7 @@
     color: inherit;
     outline: none !important;
     padding: 26px 10px 12px 10px;
-    transition: all .3s;
+    transition: $defaultTransition;
     width: 100%;
   }
   label {
@@ -21,7 +21,7 @@
     position: absolute;
     text-overflow: ellipsis;
     top: 5px;
-    transition: all .3s;
+    transition: $defaultTransition;
     white-space: nowrap;
   }
   &__info {

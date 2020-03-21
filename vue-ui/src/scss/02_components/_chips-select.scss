@@ -1,0 +1,42 @@
+@import "../01_base/variables";
+
+.chips-select {
+
+  &__selected {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  &__selected-chip {
+    background: $themeColor;
+    border-radius: $defaultLineHeight;
+    color: $textColorInv;
+    cursor: pointer;
+    margin: $spacing / 4;
+    padding: $spacing / 4 $spacing;
+
+    &:hover {
+      background: $themeColorDarken;
+    }
+  }
+
+  &__available {
+    margin-top: $spacing / 2;
+  }
+  &__available-item {
+    background: $inputBackgroundColor;
+    cursor: pointer;
+    margin: 2px;
+    padding: $spacing / 4 $spacing;
+    transition: $defaultTransition;
+
+    &:hover {
+      background: $inputBackgroundColorDarken;
+    }
+  }
+
+
+}

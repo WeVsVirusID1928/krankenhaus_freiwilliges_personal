@@ -1,7 +1,10 @@
 /* */
 $backgroundColor: #eff3f6;
 $inputBackgroundColor: #d4d8db;
+$inputBackgroundColorDarken: darken($inputBackgroundColor, 10%);
 $themeColor: #00c0ff;
+$themeColorDarken: darken($themeColor, 10%);
+$defaultTransition: all .3s;
 
 $successColor: #239F5D;
 $errorColor: #b01111;

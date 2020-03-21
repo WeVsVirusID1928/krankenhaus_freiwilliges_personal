@@ -1,34 +1,8 @@
 <template>
     <div class="container">
         <div class="layout layout--wrap">
-            <div class="flex xs12 sm4 margin-top">
-                <text-field
-                        :label="'Vorname'"
-                        v-model="person.firstName"
-                />
-            </div>
-            <div class="flex xs12 sm4 margin-top">
-                <text-field
-                        :label="'Nachname'"
-                        v-model="person.lastName"
-                />
-            </div>
-            <div class="flex xs12 sm2 margin-top">
-                <text-field
-                        :label="'PLZ'"
-                        :max-length="5"
-                        v-model="person.zipCode"
-                />
-            </div>
-            <div class="flex xs12 sm2 margin-top">
-                <text-field
-                        :label="'Entfernung in km'"
-                        :type="'number'"
-                        v-model="person.maxDistance"
-                />
-            </div>
             <div class="flex xs4 margin-top">
-                <btn :label="'Absenden'" @click="handleSubmit"/>
+                    <btn :label="'Helfen'" @click="navigate('RegisterHelpingHand')"/>
             </div>
         </div>
     </div>
@@ -49,12 +23,8 @@
             maxDistance: 20,
         };
 
-        handleSubmit() {
-            registerHelpingHand(this.person)
-                .then(response => {
-                })
-                .catch(errors => {
-                })
+        navigate(route) {
+            this.$router.push({name: route});
         }
 
         created() {
