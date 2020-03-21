@@ -16,6 +16,10 @@ Name:
 Philipp Luewig (philippludewig.de)
 lyrst
 
+Name: Andreas Kammerloher
+Email: kammerloher.andreas@gmail.com
+Twitter: @AKammerloher
+
 /* SITE */
 
 Last update: YYYY/MM/DD 
