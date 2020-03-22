@@ -58,7 +58,7 @@
                     <div class="stepper__actions">
                         <div class="layout">
                             <div class="flex xs6">
-                                <btn :label="'Zurück'" @click="stepBackward()" :disabled="step === 0"/>
+                                <btn :label="'Zurück'" :color="'secondary'" @click="stepBackward()" :disabled="step === 0"/>
                             </div>
                             <div class="flex xs6">
                                 <btn :label="'Weiter'" @click="stepForward()"/>

@@ -8,6 +8,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "axios": "^0.19.2",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.11",

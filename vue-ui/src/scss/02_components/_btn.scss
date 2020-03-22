@@ -12,4 +12,13 @@
   &:hover {
     background: $themeColorDarken;
   }
+
+  &--secondary {
+    background: $inputBackgroundColor;
+    color: $textColor;
+
+    &:hover {
+      background: $inputBackgroundColorDarken;
+    }
+  }
 }
