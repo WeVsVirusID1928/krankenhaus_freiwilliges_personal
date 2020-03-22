@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="layout layout--wrap">
-            <img class="logo" src='@/assets/klinikheld.png'>
+            <img class="logo" src='@/assets/klinikhero.png'>
             <div class="flex xs12 sm6 md4 margin-top">
                 <btn :label="'Helfen'" @click="navigate('RegisterHelpingHand')"/>
             </div>
