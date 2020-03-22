@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - temporary_backend
+      - backend
     ports:
       - "8080:8080"
     command:
@@ -31,3 +32,10 @@ services:
       - |
         npm ci
         npm run dev
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8443:8443"
