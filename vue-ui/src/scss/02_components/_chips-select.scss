@@ -1,7 +1,6 @@
 @import "../01_base/variables";
 
 .chips-select {
-
   &__selected {
     align-items: center;
     display: flex;
@@ -27,7 +26,8 @@
     margin-top: $spacing / 2;
   }
   &__available-item {
-    background: $inputBackgroundColor;
+    background: $white;
+    color: $themeColorDarken;
     cursor: pointer;
     margin: 2px;
     padding: $spacing / 4 $spacing;
@@ -37,6 +37,4 @@
       background: $inputBackgroundColorDarken;
     }
   }
-
-
 }
