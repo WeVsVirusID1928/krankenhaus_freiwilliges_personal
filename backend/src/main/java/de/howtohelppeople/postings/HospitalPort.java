@@ -33,10 +33,10 @@ public class HospitalPort {
     public ResponseEntity<String> onResRequest(
             @RequestParam("lat") double lat,
             @RequestParam("lon") double lon,
-            @RequestParam("distance") double distance) {
+            @RequestParam("distance") double distanceMeters) {
 
         return ResponseEntity.ok(
-                new Gson().toJson(hospitalService.getAllHospitalsWithDistance(lat, lon, distance))
+                new Gson().toJson(hospitalService.getAllHospitalsWithDistance(lat, lon, distanceMeters))
         );
     }
 
