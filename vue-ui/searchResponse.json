@@ -1,0 +1,23 @@
+// https://example.org/search?zipCode=12345&distance=20&skillSet=materialCare,cleaning
+[
+  {
+    "title": "Lorem ipsum",
+    "description": "bla bla bla",
+    "skillSet": [
+      "cleaning",
+      "materialCare"
+    ],
+    "location": {
+      "name": "Eduardus Krankenhaus",
+      "street": "Musterstr. 4",
+      "zipCode": "12345",
+      "city": "Köln",
+      "country": "Schland",
+      "lat": 1.0,
+      "lng": 2.0,
+      "phone": "123456",
+      "fax": "123456",
+      "email": "a@b.de"
+    }
+  }
+]

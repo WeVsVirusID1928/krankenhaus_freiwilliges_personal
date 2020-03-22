@@ -66,10 +66,10 @@
             skillSet: []
         };
         skillSet: ChipValue[] = [
-            {label: 'Materialpflege', key: 'materialCare'},
-            {label: 'Reinigung', key: 'cleaning'},
-            {label: 'Verpflegung', key: 'foodSupply'},
-            {label: 'Sonstiges', key: 'misc'},
+            { label: 'Materialpflege', key: 'materialCare' },
+            { label: 'Reinigung', key: 'cleaning' },
+            { label: 'Verpflegung', key: 'foodSupply' },
+            { label: 'Sonstiges', key: 'misc' },
         ];
 
         handleSubmit() {
