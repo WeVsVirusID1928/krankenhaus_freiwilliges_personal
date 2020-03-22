@@ -16,14 +16,8 @@
 
     @Component({})
     export default class App extends Vue {
-        person: HelpingHand = {
-            firstName: '',
-            lastName: '',
-            zipCode: '',
-            maxDistance: 20,
-        };
 
-        navigate(route) {
+        navigate(route: string) {
             this.$router.push({name: route});
         }
 
