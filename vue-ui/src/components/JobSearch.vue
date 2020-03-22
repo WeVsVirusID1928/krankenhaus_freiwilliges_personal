@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="job-search__results layout layout--wrap">
+        <div class="job-search__results layout layout--wrap margin-top">
             <l-map style="height: 400px; width: 100%;"
                 :zoom="zoom"
                 :center="center"
