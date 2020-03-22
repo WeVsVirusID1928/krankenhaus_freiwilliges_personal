@@ -14,6 +14,13 @@
     width: 100%;
     &.inverse {
       border: none;
+      font-size: 1rem;
+      padding: 1rem;
+
+      &::-webkit-input-placeholder {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
     }
   }
   label {
@@ -82,6 +89,7 @@
   &--append-icon {
     input {
       padding-right: 40px;
+
     }
     .text-field__append-icon {
       display: block;
@@ -92,6 +100,11 @@
       background: $inputBackgroundColor;
       border-color: $themeColor;
       box-shadow: 1px 1px 0 $themeColor, -1px -1px 0 $themeColor, 1px -1px 0 $themeColor, -1px 1px 0 $themeColor;
+
+      &.inverse {
+        background-color: $white;
+      }
+
     }
   }
   &--error {

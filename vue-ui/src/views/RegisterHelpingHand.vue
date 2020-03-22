@@ -14,7 +14,7 @@
                 <h2 class="stepper_label">Wo bist du?</h2>
                 <text-field
                   :is-inverse="true"
-                  :label="'Postleitzahl deines Aufenthaltsorts'"
+                  :label="'Postleitzahl Aufenthaltsort'"
                   :max-length="5"
                   v-model="person.zipCode"
                 />
@@ -24,14 +24,13 @@
                 <chips-select v-model="person.skillSet" :chips="skillSet" />
               </div>
               <div class="stepper__step" :class="stepperStepClasses(4)">
-                <h2>Besitzen Sie zusätzliche Ausbildungen / Zertifikate / Bescheinigungen?</h2>
+                <h2>Hast du zusätzliche Ausbildungen order Zertifikate?</h2>
                 <chips-select v-model="person.additionalSkills" :chips="additionalSkillSet" />
               </div>
               <div class="stepper__step" :class="stepperStepClasses(5)">
-                <h2>In welchem Umkreis wollen Sie suchen?</h2>
+                <h2>In welchem Umkreis sollen wir suchen?</h2>
                 <text-field
                   :label="'Entfernung in km'"
-                  :type="'number'"
                   :is-inverse="true"
                   v-model="person.maxDistance"
                 />

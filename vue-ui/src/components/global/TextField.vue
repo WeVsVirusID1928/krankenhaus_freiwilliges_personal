@@ -13,8 +13,9 @@
         @focus="handleFocus"
         @blur="focused = false"
         @keyup.enter="emitKeyupEnter"
+        :placeholder="label"
     >
-    <label :for="inputId">{{label}}</label>
+    <!-- <label :for="inputId">{{label}}</label> -->
     <div class="text-field__prepend-icon" v-if="prependIcon">
       <icon :icon="prependIcon"/>
     </div>
