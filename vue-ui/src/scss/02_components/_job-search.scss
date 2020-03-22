@@ -1,0 +1,47 @@
+@import "../01_base/variables";
+
+.job-search {
+  &__results {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -$spacing / 2;
+  }
+
+  &__result {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    margin: $spacing / 2;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__result-header {
+    display: flex;
+  }
+  &__result-title {
+    color: $themeColor;
+    font-size: $defaultFontSize;
+    margin: 0;
+    padding: $spacing / 2 $spacing;
+  }
+  &__result-distance {
+    background: $themeColor;
+    border-bottom-left-radius: $defaultFontSize;
+    color: $textColorInv;
+    padding: $spacing / 2 $spacing;
+
+    .svg-inline--fa {
+      margin-right: $spacing / 2;
+    }
+  }
+
+  &__result-location, &__result-skillset {
+    padding: $spacing / 2 $spacing;
+
+    .svg-inline--fa {
+      margin-right: $spacing / 2;
+    }
+  }
+
+}
