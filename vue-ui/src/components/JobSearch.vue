@@ -39,7 +39,7 @@
                         <div class="job-search__result-distance"><font-awesome-icon icon="route" :color="'#fff'"/>1,2 km</div>
                     </div>
                     <div class="job-search__result-skillset">
-                        <font-awesome-icon icon="clipboard-check" :color="'#00c0ff'"/>{{job.skillSet.join(', ')}}
+                        <font-awesome-icon icon="clipboard-check" :color="'#00c0ff'"/>{{getSkillLabels(job.skillSet)}}
                     </div>
                     <div class="job-search__result-location">
                         <font-awesome-icon icon="clinic-medical" :color="'#00c0ff'" />{{job.location.name}} / {{job.location.city}}
@@ -58,9 +58,9 @@
 
     @Component({})
     export default class App extends Vue {
-        @Prop({ default: false }) hideControls!;
-        @Prop({ default: false }) initZipCode!;
-        @Prop({ default: false }) initMaxDistance!;
+        @Prop({ default: false }) hideControls!: boolean;
+        @Prop({ default: false }) initZipCode!: string;
+        @Prop({ default: false }) initMaxDistance!: number;
         zipCode: string = '';
         maxDistance: number = 20;
         jobs: Job[] = [];
@@ -71,8 +71,8 @@
             { label: 'Sonstiges', key: 'misc' },
         ];
 
-        getSkillLabel(key: string): string  {
-            return this.skillSet.find(skill => skill.key === key).label;
+        getSkillLabels(keys: string[]): string  {
+            return this.skillSet.filter(skill => keys.includes(skill.key)).map(skill => skill.label).join(', ');
         }
 
         created() {
