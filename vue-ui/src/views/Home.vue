@@ -12,8 +12,6 @@
 <script lang="ts">
     import Vue from 'vue';
     import { Component } from 'vue-property-decorator';
-    import { HelpingHand } from '@/interfaces/types';
-    import { registerHelpingHand } from '@/services/apiService';
     import JobSearch from "@/components/JobSearch.vue";
 
     @Component({

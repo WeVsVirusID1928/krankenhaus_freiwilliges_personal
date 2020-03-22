@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="layout layout--wrap layout--center">
+        <div class="layout layout--wrap layout--center" v-if="step <= steps">
             <div class="flex xs6">
                 <h1>Registriere dich als Helfer</h1>
                 <div class="stepper">
@@ -68,6 +68,9 @@
                 </div>
             </div>
         </div>
+        <div v-else>
+            <job-search :hideControls="true" :init-zip-code="person.zipCode" :init-max-distance="person.maxDistance"/>
+        </div>
     </div>
 </template>
 
@@ -76,11 +79,14 @@
     import { Component } from 'vue-property-decorator';
     import { ChipValue, HelpingHand } from '@/interfaces/types';
     import { registerHelpingHand } from '@/services/apiService';
+    import JobSearch from '@/components/JobSearch.vue';
 
-    @Component({})
+    @Component({
+        components: { JobSearch }
+    })
     export default class App extends Vue {
         step: number = 1;
-        steps: number = 6;
+        steps: number = 5;
         person: HelpingHand = {
             firstName: '',
             lastName: '',
@@ -122,7 +128,7 @@
         }
 
         stepForward() {
-            if(this.step < this.steps) {
+            if(this.step <= this.steps) {
                 this.step++;
             }
         }
