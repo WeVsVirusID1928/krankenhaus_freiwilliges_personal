@@ -120,7 +120,7 @@
         ];
         map: any;
 
-        latLng(lat, lng) {
+        latLng(lat: number, lng: number) {
             return latLng(lat,lng);
         }
 
