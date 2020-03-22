@@ -5,6 +5,7 @@
                     <btn :label="'Helfen'" @click="navigate('JobSearch')"/>
             </div>
         </div>
+    <job-search></job-search>
     </div>
 </template>
 
@@ -13,10 +14,14 @@
     import { Component } from 'vue-property-decorator';
     import { HelpingHand } from '@/interfaces/types';
     import { registerHelpingHand } from '@/services/apiService';
+    import JobSearch from "@/components/JobSearch.vue";
 
-    @Component({})
+    @Component({
+    components: {
+        JobSearch
+    }
+    })
     export default class App extends Vue {
-
         navigate(route: string) {
             this.$router.push({name: route});
         }
