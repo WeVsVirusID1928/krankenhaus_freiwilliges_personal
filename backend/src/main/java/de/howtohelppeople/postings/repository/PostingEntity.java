@@ -1,17 +1,18 @@
-package de.howtohelppeople.entities;
+package de.howtohelppeople.postings.repository;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "postings")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PostingEntity {
     @Id
     @GeneratedValue
@@ -22,4 +23,7 @@ public class PostingEntity {
     private String comment;
     private String contact;
     private String areaCode;
+    @ManyToOne
+    private HospitalEntity hospitalEntity;
+
 }

@@ -1,16 +1,15 @@
-package de.howtohelppeople.services;
+package de.howtohelppeople.postings;
 
+import de.howtohelppeople.postings.repository.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.transaction.Transactional;
-
-import de.howtohelppeople.entities.PostingEntity;
-import de.howtohelppeople.repositories.PostingRepository;
 
 @Service
 @Transactional
@@ -25,7 +24,7 @@ public class PostingService {
     }
 
     public PostingEntity create(PostingEntity posting) {
-        return postingRepository.save(posting);
+        return postingRepository.saveAndFlush(posting);
     }
 
     public Collection<PostingEntity> getAllpostings() {
@@ -33,8 +32,9 @@ public class PostingService {
         return postingRepository.findAll();
     }
 
-    public Collection<PostingEntity> getPostings(String areaCode) {
-        LOGGER.debug("Getting postings for areaCode: " + areaCode);
-        return postingRepository.findByAreaCode(areaCode);
+    public PostingSearchResponse getPostings(String zipCode, String distance, List<String> skillSets) {
+        LOGGER.debug("Getting postings for areaCode: " + zipCode);
+        List<PostingEntity> postingEntities = postingRepository.findByAreaCode(zipCode);
+        return new PostingSearchResponse(postingEntities);
     }
 }
