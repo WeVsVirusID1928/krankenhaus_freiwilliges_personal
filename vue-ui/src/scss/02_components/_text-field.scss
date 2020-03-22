@@ -12,6 +12,9 @@
     padding: 26px 10px 12px 10px;
     transition: $defaultTransition;
     width: 100%;
+    &.inverse {
+      border: none;
+    }
   }
   label {
     color: $textColor;
@@ -39,6 +42,9 @@
   &__counter {
     flex-shrink: 0;
     text-align: right;
+    &--inverse {
+      color: $white;
+    }
   }
   &__error-messages {
     color: $errorColor;
