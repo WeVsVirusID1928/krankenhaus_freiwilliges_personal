@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <div class="layout layout--wrap layout--center" v-if="step <= steps">
+    <div class="container container__helperFlow">
+        <div class="layout layout--wrap layout--center layout--center-vertical">
             <div class="flex xs6">
                 <h1>Registriere dich als Helfer</h1>
                 <div class="stepper">

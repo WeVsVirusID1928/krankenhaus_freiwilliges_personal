@@ -1,14 +1,20 @@
 @import "../01_base/variables";
 @import "../01_base/mixins";
 
+html,
 body {
-  background:$backgroundColor;
+  background: $backgroundColor;
   color: $textColor;
   font-family: $defaultFontFamily;
   font-size: $defaultFontSize;
   line-height: $defaultLineHeight;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
 
   * {
     box-sizing: border-box;
@@ -18,11 +24,17 @@ body {
 #app {
   display: flex;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 .container {
   max-width: $maxPageWidth;
   padding: $spacing;
   width: 100%;
+
+  &__helperFlow {
+    display: flex;
+  }
 }
 
 .margin-top {
