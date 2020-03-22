@@ -12,7 +12,7 @@ export interface HelpingHand {
     additionalSkills: string[];
 }
 
-export interface Location {
+export interface JobLocation {
     name: string;
     street: string;
     zipCode: string;
@@ -23,11 +23,12 @@ export interface Location {
     phone: string;
     fax: string;
     email: string;
+    distance: string;
 }
 
 export interface Job {
     title: string;
     description: string;
     skillSet: string[];
-    location: Location;
+    location: JobLocation;
 }

@@ -21,6 +21,7 @@
   }
   &__result-title {
     color: $themeColor;
+    flex-grow: 1;
     font-size: $defaultFontSize;
     margin: 0;
     padding: $spacing / 2 $spacing;
