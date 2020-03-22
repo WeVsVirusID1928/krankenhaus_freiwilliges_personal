@@ -2,7 +2,7 @@
     <div class="container">
         <div class="layout layout--wrap">
             <div class="flex xs4 margin-top">
-                    <btn :label="'Helfen'" @click="navigate('JobSearch')"/>
+                    <btn :label="'Helfen'" @click="navigate('RegisterHelpingHand')"/>
             </div>
         </div>
     <job-search></job-search>
