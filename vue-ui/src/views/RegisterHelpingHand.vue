@@ -101,14 +101,14 @@
             { label: 'Rettunssanitäter', key: 'medic' },
         ];
 
-        stepperProgressItemClasses(step) {
+        stepperProgressItemClasses(step: number) {
             return {
                 'stepper__progress-item--done': this.step > step,
                 'stepper__progress-item--active': this.step === step,
             }
         }
 
-        stepperStepClasses(step) {
+        stepperStepClasses(step: number) {
             return {
                 'stepper__step--done': this.step > step,
                 'stepper__step--active': this.step === step,
