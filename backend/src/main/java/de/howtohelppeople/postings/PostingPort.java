@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import de.howtohelppeople.postings.repository.PostingEntity;
 import de.howtohelppeople.postings.repository.PostingSearchResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.List;
 @Controller
 @RequestMapping(path = "/search")
 @ResponseBody
+@Slf4j
 public class PostingPort {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PostingPort.class);
 
@@ -49,7 +51,7 @@ public class PostingPort {
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public String createPosting(@RequestBody PostingEntity posting) {
-		LOGGER.debug("Processing posting create:" + posting.toString());
+		log.debug("Processing posting create: {}", posting.toString());
 
 		try {
 			PostingEntity createdPosting = postingService.create(posting);
