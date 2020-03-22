@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <style>
+      #mapid {
+        height: 700px;
+      }
+    </style>
+    <script
+      src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""
+    ></script>
+    <script>
+      setTimeout(() => {
+        const myMap = L.map("mapid").setView([51.3375, 9.8252], 6);
+
+        L.tileLayer("http://a.tile.stamen.com/terrain/{z}/{x}/{y}.png", {
+          attribution:
+            'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+          maxZoom: 18
+        }).addTo(myMap);
+
+        const charite = L.marker([52.524511, 13.377874]).addTo(myMap);
+        charite.bindPopup(
+          "<strong>Charité Berlin</strong> <br />Essen austeilen."
+        );
+
+        const uniMedCenter = L.marker([53.590692, 9.975522]).addTo(myMap);
+        uniMedCenter.bindPopup(
+          "<strong>University Medical Center (Hamburg)</strong> <br />Bitte Helfer zum Desinfizieren von Betten"
+        );
+
+        const nurembergHospitalNorth = L.marker([49.462465, 11.059590]).addTo(myMap);
+        nurembergHospitalNorth.bindPopup(
+          "<strong>Nürnberg Hospital North</strong> <br />Essen austeilen und Transport leerer Betten"
+        );
+
+        const bounds = myMap.getBounds();
+        console.log(
+          `The bounds of the map: North: ${bounds.getNorth()}, East: ${bounds.getEast()}, South: ${bounds.getSouth()}, West: ${bounds.getWest()}.`
+        );
+      }, 1000);
+    </script>
+  </head>
+
+  <body>
+    <h1>Leaflet Demo!</h1>
+    <div id="mapid"></div>
+  </body>
+</html>
