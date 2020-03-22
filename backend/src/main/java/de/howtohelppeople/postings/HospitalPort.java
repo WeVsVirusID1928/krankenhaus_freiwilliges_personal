@@ -1,4 +1,4 @@
-package de.howtohelppeople.hospitals;
+package de.howtohelppeople.postings;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import de.howtohelppeople.postings.HospitalService;
 import de.howtohelppeople.postings.repository.HospitalEntity;
 import lombok.extern.slf4j.Slf4j;
 
