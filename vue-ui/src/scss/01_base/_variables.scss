@@ -3,6 +3,8 @@ $backgroundColor: #eff3f6;
 $inputBackgroundColor: #d4d8db;
 $inputBackgroundColorDarken: darken($inputBackgroundColor, 10%);
 $themeColor: #00c0ff;
+$white: #fff;
+$themeColorDarkenBorder: #107494;
 $themeColorDarken: darken($themeColor, 10%);
 $defaultTransition: all .3s;
 
@@ -18,7 +20,7 @@ $defaultFontSizeHeader: 20px;
 $defaultLineHeightHeader: 30px;
 
 
-$spacing: 24px;
+$spacing: 28px;
 
 $maxPageWidth: 1200px;
 
