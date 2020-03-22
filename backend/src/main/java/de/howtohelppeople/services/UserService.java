@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,5 +41,13 @@ public class UserService {
         result.addProperty("name", user.getUserName());
         result.addProperty("email", user.getEmail());
         return result.toString();
+    }
+
+    public static String generateSecuredPasswordHash(String originalPassword) {
+        return BCrypt.hashpw(originalPassword, BCrypt.gensalt(12));
+    }
+
+    public static boolean matchSecuredPasswordHash(String originalPassword, String generatedSecuredPasswordHash) {
+        return BCrypt.checkpw(originalPassword, generatedSecuredPasswordHash);
     }
 }
