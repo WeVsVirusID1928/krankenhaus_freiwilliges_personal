@@ -1,8 +1,15 @@
 @import "../01_base/variables";
 
+
 .stepper {
   display: flex;
-  flex-direction: column;
+  height: 75%;
+  align-items: center;
+  padding-bottom: 2rem;
+
+  .stepper-container {
+    width: 100%;
+  }
 
   &__progress {
     display: flex;
@@ -10,6 +17,7 @@
     flex-shrink: 0;
     position: relative;
     width: 100%;
+    margin-top: 1.5rem;
   }
 
   &__progress-line {
@@ -22,40 +30,41 @@
     width: 100%;
 
     &::after {
-      background: $textColorInv;
+      background: $themeColorDarkenBorder;
       content: ' ';
-      height: 2px;
+      height: 3px;
       width: 100%;
     }
   }
 
   &__progress-item {
     align-items: center;
-    background: $inputBackgroundColor;
-    border: $spacing / 2 solid $backgroundColor;
+    background: $themeColorDarkenBorder;
+    border: 5px solid $themeColorDarkenBorder;
     border-radius: $defaultLineHeight;
-    color: $textColor;
+    color: $white;
     display: flex;
-    height: $defaultLineHeight * 2;
+    height: $defaultLineHeight * 1.75;
     justify-content: center;
     position: relative;
     transition: $defaultTransition;
-    width: $defaultLineHeight * 2;
+    width: $defaultLineHeight * 1.75;
 
     &--done {
-      background: $themeColorDarken;
-      color: $textColorInv;
+      background: $themeColorDarkenBorder;
+      color: $white;
     }
     &--active {
-      background: $themeColor;
-      color: $textColorInv;
+      background: $white;
+      border-color: $white;
+      color: $themeColorDarkenBorder;
     }
   }
 
   &__steps {
   }
   &__step {
-    min-height: 250px;
+    min-height: auto;
     position: absolute;
     opacity: 0;
     transform: translateX(100%);
@@ -73,6 +82,8 @@
   }
 
   &__actions {
+    display: flex;
+    flex-direction: column;
     margin-top: $spacing;
   }
 }

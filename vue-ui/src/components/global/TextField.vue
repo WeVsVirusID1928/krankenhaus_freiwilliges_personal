@@ -9,6 +9,7 @@
         :readonly="readonly"
         v-bind:value="value"
         v-on:input="$emit('input', $event.target.value)"
+        v-bind:class="{ 'inverse': isInverse }"
         @focus="handleFocus"
         @blur="focused = false"
         @keyup.enter="emitKeyupEnter"
@@ -23,7 +24,7 @@
     <div class="text-field__info">
       <div class="text-field__hint">{{hint}}</div>
       <div class="text-field__error-messages">{{joinedErrorMessages}}</div>
-      <div class="text-field__counter" v-if="type !== 'number'">{{ value ? value.length : 0}}/{{maxLength}}</div>
+      <div class="text-field__counter" v-bind:class="{ 'text-field__counter--inverse': isInverse }" v-if="type !== 'number'">{{ value ? value.length : 0}}/{{maxLength}}</div>
     </div>
   </div>
 </template>
@@ -48,6 +49,7 @@
     @Prop({default: false}) clearable!: boolean;
     @Prop({default: false}) readonly!: boolean;
     @Prop({default: false}) disabled!: boolean;
+    @Prop() isInverse?: boolean;
 
     inputId: string = '';
     focused: boolean = false;

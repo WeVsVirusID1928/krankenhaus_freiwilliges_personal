@@ -34,6 +34,48 @@ body {
 
   &__helperFlow {
     display: flex;
+    background-color: $themeColorDarken;
+
+    h1,
+    h2 {
+      color: $white;
+      line-height: 1;
+      margin: 0.5rem 0;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: lighter;
+    }
+
+    h2 {
+      font-size: 2.1rem;
+      margin: 0.75rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    &__helperFlow {
+      .layout {
+        .flex.xs6 {
+          flex-basis: 80%;
+          max-width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.next {
+  padding: 0;
+  align-self: flex-end;
+  .btn {
+    &:hover {
+      background-color: $themeColor;
+    }
   }
 }
 
