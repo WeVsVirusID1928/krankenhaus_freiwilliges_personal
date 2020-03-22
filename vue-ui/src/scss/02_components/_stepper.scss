@@ -1,0 +1,77 @@
+@import "../01_base/variables";
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+
+  &__progress {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  &__progress-line {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &::after {
+      background: $textColorInv;
+      content: ' ';
+      height: 2px;
+      width: 100%;
+    }
+  }
+
+  &__progress-item {
+    align-items: center;
+    background: $inputBackgroundColor;
+    border: $spacing / 2 solid $backgroundColor;
+    border-radius: $defaultLineHeight;
+    color: $textColor;
+    display: flex;
+    height: $defaultLineHeight * 2;
+    justify-content: center;
+    position: relative;
+    transition: $defaultTransition;
+    width: $defaultLineHeight * 2;
+
+    &--done {
+      background: $themeColorDarken;
+      color: $textColorInv;
+    }
+    &--active {
+      background: $themeColor;
+      color: $textColorInv;
+    }
+  }
+
+  &__steps {
+  }
+  &__step {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: $defaultTransition;
+    z-index: 0;
+
+    &--done {
+      transform: translateX(-100%);
+    }
+    &--active {
+      opacity: 1;
+      position: relative;
+      transform: translateX(0);
+    }
+  }
+
+  &__actions {
+    margin-top: $spacing;
+  }
+}

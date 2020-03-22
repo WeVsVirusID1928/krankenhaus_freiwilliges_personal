@@ -8,5 +8,6 @@ export interface HelpingHand {
     lastName: string;
     zipCode: string;
     maxDistance: number;
-    skillSet: [];
+    skillSet: string[];
+    additionalSkills: string[];
 }
