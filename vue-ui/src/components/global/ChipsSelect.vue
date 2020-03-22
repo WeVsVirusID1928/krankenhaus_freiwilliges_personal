@@ -32,8 +32,9 @@
             })
         }
 
-        getChipLabel(key: string): string | undefined {
-            return this.chips.find(chip => chip.key === key).label;
+        getChipLabel(key: string): string {
+            const chip = this.chips.find(chip => chip.key && chip.key === key);
+            return chip ? chip.label : "";
         }
 
         handleSelect(chip: ChipValue) {
