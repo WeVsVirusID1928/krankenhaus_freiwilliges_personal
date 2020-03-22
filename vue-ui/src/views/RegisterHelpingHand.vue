@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="layout layout--wrap">
+        <div class="layout layout--wrap layout--center">
             <div class="flex xs6">
                 <h1>Registriere dich als Helfer</h1>
                 <div class="stepper">
