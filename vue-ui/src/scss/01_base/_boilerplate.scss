@@ -56,7 +56,21 @@ body {
   }
 }
 
-.next{
+@media screen and (max-width: 800px) {
+  .container {
+    &__helperFlow {
+      .layout {
+        .flex.xs6 {
+          flex-basis: 80%;
+          max-width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.next {
   padding: 0;
   align-self: flex-end;
 }
