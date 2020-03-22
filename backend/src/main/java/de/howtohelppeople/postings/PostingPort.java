@@ -1,6 +1,8 @@
 package de.howtohelppeople.postings;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import de.howtohelppeople.postings.repository.PostingEntity;
 import de.howtohelppeople.postings.repository.PostingSearchResponse;
 import org.slf4j.Logger;
@@ -52,10 +54,14 @@ public class PostingPort {
 		try {
 			PostingEntity createdPosting = postingService.create(posting);
 
-			return "{\"id\": \"" + createdPosting.getId() + "\"}";
+			JsonObject result = new JsonObject();
+			result.addProperty("id", createdPosting.getId());
+			return result.toString();
 		} catch (DataIntegrityViolationException e) {
 			LOGGER.warn("Exception occurred when trying to save the posting", e);
-			return "{\"error\": \"" + e.getMessage() + "\"}";
+			JsonObject result = new JsonObject();
+			result.addProperty("error", e.getMessage());
+			return result.toString();
 		}
 	}
 }
