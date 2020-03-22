@@ -143,7 +143,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-    @import '../../node_modules/leaflet/dist/leaflet.css';
-</style>
