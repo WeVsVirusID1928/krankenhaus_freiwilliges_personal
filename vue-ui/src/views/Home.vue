@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="layout layout--wrap">
-            <div class="flex xs4 margin-top">
+            <div class="flex xs12 sm6 md4 margin-top">
                     <btn :label="'Helfen'" @click="navigate('RegisterHelpingHand')"/>
             </div>
         </div>
