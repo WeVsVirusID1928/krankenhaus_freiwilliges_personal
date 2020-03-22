@@ -31,7 +31,7 @@
                         :url="url"
                         :attribution="attribution"
                 />
-                <l-marker :lat-lng="latLng(jobLocation.lat, jobLocation.lng)" v-for="jobLocation in jobLocations">
+                <l-marker :lat-lng="latLng(jobLocation.lat, jobLocation.lng)" :key="`location_${index}`" v-for="(jobLocation, index) in jobLocations">
 <!--                    <l-popup>-->
 <!--                        <div @click="innerClick">-->
 <!--                            I am a popup-->
