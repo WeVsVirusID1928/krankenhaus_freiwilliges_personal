@@ -79,6 +79,30 @@ body {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .container {
+    .layout {
+      .flex.xs4 {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.logo {
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+.logo {
+  width: 100%;
+}
+}
+
+
+
 .margin-top {
   margin-top: $spacing;
 }
