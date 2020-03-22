@@ -32,7 +32,7 @@
             })
         }
 
-        getChipLabel(key: string): string {
+        getChipLabel(key: string): string | undefined {
             return this.chips.find(chip => chip.key === key).label;
         }
 
