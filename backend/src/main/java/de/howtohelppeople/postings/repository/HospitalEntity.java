@@ -1,17 +1,14 @@
 package de.howtohelppeople.postings.repository;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.Set;
 
 import static de.howtohelppeople.postings.repository.HospitalEntity.TABLE_NAME;
 
@@ -44,6 +41,12 @@ public class HospitalEntity {
     private String faxNumber;
     private String email;
 
+    @OneToMany(
+            cascade = {CascadeType.PERSIST, CascadeType.PERSIST, CascadeType.REMOVE},
+            mappedBy = "hospitalEntity",
+            fetch = FetchType.EAGER
+    )
+    private Set<PostingEntity> postings;
 
     @Builder
     public HospitalEntity(String name, String street, String zipCode, String country, String city, double latitude, double longitude, String phoneNumber, String faxNumber, String email) {
