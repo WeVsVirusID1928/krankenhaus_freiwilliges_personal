@@ -113,10 +113,10 @@
         jobs: Job[] = [];
         jobLocations: JobLocation[] = [];
         skillSet: ChipValue[] = [
-            { label: 'Materialpflege', key: 'materialCare' },
-            { label: 'Reinigung', key: 'cleaning' },
-            { label: 'Verpflegung', key: 'foodSupply' },
-            { label: 'Sonstiges', key: 'misc' },
+            { label: 'Logistik', key: 'logistics' },
+            { label: 'Desinfektion', key: 'desinfection' },
+            { label: 'Sicherheit | Organisation', key: 'organisation' },
+            { label: 'Verpflegung', key: 'catering' }
         ];
         map: any;
 
