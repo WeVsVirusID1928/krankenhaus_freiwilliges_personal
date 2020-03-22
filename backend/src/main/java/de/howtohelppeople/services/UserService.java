@@ -1,5 +1,6 @@
 package de.howtohelppeople.services;
 
+import com.google.gson.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,10 @@ public class UserService {
 
     public String getUserStats(Long id) {
         UserEntity user = userRepository.findById(id);
-        String result = "{ID : " + user.getId().toString() + ", Name: " + user.getUserName() + ", email:" + user.getEmail() + " }";
-
-        return result;
+        JsonObject result = new JsonObject();
+        result.addProperty("id", user.getId());
+        result.addProperty("name", user.getUserName());
+        result.addProperty("email", user.getEmail());
+        return result.toString();
     }
 }
