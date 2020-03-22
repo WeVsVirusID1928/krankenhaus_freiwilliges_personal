@@ -75,8 +75,8 @@ const jobs = [
         title: 'Reinigung von Betten',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum enim ut nibh lacinia, in faucibus enim sagittis. Nulla eu pellentesque odio, vitae hendrerit neque. Aenean tincidunt pretium justo sed placerat. Maecenas enim est, efficitur sed commodo eget, faucibus eget nulla. Fusce ultricies finibus nibh, et feugiat risus. Cras eu augue ac dolor imperdiet gravida. Morbi eleifend tortor at elit auctor accumsan. Donec volutpat urna a nunc egestas feugiat. Nullam tincidunt vehicula rhoncus. Sed at nunc et nisl tempor tincidunt. Sed ac ornare purus.',
         skillSet: [
-            'cleaning',
-            'materialCare'
+            'desinfection',
+            'logistics'
         ],
         location: jobLocations[0]
     },
@@ -84,8 +84,8 @@ const jobs = [
         title: 'Reinigung von Betten',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum enim ut nibh lacinia, in faucibus enim sagittis. Nulla eu pellentesque odio, vitae hendrerit neque. Aenean tincidunt pretium justo sed placerat. Maecenas enim est, efficitur sed commodo eget, faucibus eget nulla. Fusce ultricies finibus nibh, et feugiat risus. Cras eu augue ac dolor imperdiet gravida. Morbi eleifend tortor at elit auctor accumsan. Donec volutpat urna a nunc egestas feugiat. Nullam tincidunt vehicula rhoncus. Sed at nunc et nisl tempor tincidunt. Sed ac ornare purus.',
         skillSet: [
-            'cleaning',
-            'materialCare'
+            'desinfection',
+            'logistics'
         ],
         location: jobLocations[1]
     },
@@ -93,8 +93,8 @@ const jobs = [
         title: 'Reinigung von Betten',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum enim ut nibh lacinia, in faucibus enim sagittis. Nulla eu pellentesque odio, vitae hendrerit neque. Aenean tincidunt pretium justo sed placerat. Maecenas enim est, efficitur sed commodo eget, faucibus eget nulla. Fusce ultricies finibus nibh, et feugiat risus. Cras eu augue ac dolor imperdiet gravida. Morbi eleifend tortor at elit auctor accumsan. Donec volutpat urna a nunc egestas feugiat. Nullam tincidunt vehicula rhoncus. Sed at nunc et nisl tempor tincidunt. Sed ac ornare purus.',
         skillSet: [
-            'cleaning',
-            'materialCare'
+            'desinfection',
+            'logistics'
         ],
         location: jobLocations[2]
     },
@@ -102,8 +102,8 @@ const jobs = [
         title: 'Reinigung von Betten',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum enim ut nibh lacinia, in faucibus enim sagittis. Nulla eu pellentesque odio, vitae hendrerit neque. Aenean tincidunt pretium justo sed placerat. Maecenas enim est, efficitur sed commodo eget, faucibus eget nulla. Fusce ultricies finibus nibh, et feugiat risus. Cras eu augue ac dolor imperdiet gravida. Morbi eleifend tortor at elit auctor accumsan. Donec volutpat urna a nunc egestas feugiat. Nullam tincidunt vehicula rhoncus. Sed at nunc et nisl tempor tincidunt. Sed ac ornare purus.',
         skillSet: [
-            'cleaning',
-            'materialCare'
+            'desinfection',
+            'logistics'
         ],
         location: jobLocations[3]
     },
@@ -111,8 +111,8 @@ const jobs = [
         title: 'Reinigung von Betten',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum enim ut nibh lacinia, in faucibus enim sagittis. Nulla eu pellentesque odio, vitae hendrerit neque. Aenean tincidunt pretium justo sed placerat. Maecenas enim est, efficitur sed commodo eget, faucibus eget nulla. Fusce ultricies finibus nibh, et feugiat risus. Cras eu augue ac dolor imperdiet gravida. Morbi eleifend tortor at elit auctor accumsan. Donec volutpat urna a nunc egestas feugiat. Nullam tincidunt vehicula rhoncus. Sed at nunc et nisl tempor tincidunt. Sed ac ornare purus.',
         skillSet: [
-            'cleaning',
-            'materialCare'
+            'desinfection',
+            'logistics'
         ],
         location: jobLocations[2]
     },
@@ -120,8 +120,8 @@ const jobs = [
         title: 'Reinigung von Betten',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum enim ut nibh lacinia, in faucibus enim sagittis. Nulla eu pellentesque odio, vitae hendrerit neque. Aenean tincidunt pretium justo sed placerat. Maecenas enim est, efficitur sed commodo eget, faucibus eget nulla. Fusce ultricies finibus nibh, et feugiat risus. Cras eu augue ac dolor imperdiet gravida. Morbi eleifend tortor at elit auctor accumsan. Donec volutpat urna a nunc egestas feugiat. Nullam tincidunt vehicula rhoncus. Sed at nunc et nisl tempor tincidunt. Sed ac ornare purus.',
         skillSet: [
-            'cleaning',
-            'materialCare'
+            'desinfection',
+            'logistics'
         ],
         location: jobLocations[1]
     },
@@ -129,8 +129,8 @@ const jobs = [
         title: 'Reinigung von Betten',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum enim ut nibh lacinia, in faucibus enim sagittis. Nulla eu pellentesque odio, vitae hendrerit neque. Aenean tincidunt pretium justo sed placerat. Maecenas enim est, efficitur sed commodo eget, faucibus eget nulla. Fusce ultricies finibus nibh, et feugiat risus. Cras eu augue ac dolor imperdiet gravida. Morbi eleifend tortor at elit auctor accumsan. Donec volutpat urna a nunc egestas feugiat. Nullam tincidunt vehicula rhoncus. Sed at nunc et nisl tempor tincidunt. Sed ac ornare purus.',
         skillSet: [
-            'cleaning',
-            'materialCare'
+            'desinfection',
+            'logistics'
         ],
         location: jobLocations[4]
     },
