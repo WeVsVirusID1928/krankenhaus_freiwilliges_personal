@@ -1,47 +1,51 @@
 package de.howtohelppeople.postings.repository;
 
-import de.howtohelppeople.TestApp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Point;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.geo.Point;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.List;
-
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import de.howtohelppeople.TestApp;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(
-		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-		classes = {TestApp.class}
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+        classes = {TestApp.class}
 )
 @Tag("integration")
-class HospitalRepositoryTest  {
+class HospitalRepositoryTest {
 
-	@Autowired
-	HospitalRepository hospitalRepository;
+    @Autowired
+    HospitalRepository hospitalRepository;
 
 
-	@BeforeEach
-	void setUp() {
-		createHospital("NearPointHospital",new Point(5.00,10.0));
-		createHospital("AwayPointHospital",new Point(5.00,100.0));
-	}
+    @BeforeEach
+    void setUp() {
+        createHospital("NearPointHospital", new GeometryFactory().createPoint(new Coordinate(1, 5)));
+        createHospital("AwayPointHospital", new GeometryFactory().createPoint(new Coordinate(1, 10)));
+    }
 
-	@Test
-	void shouldGetNearestHospital() {
+
+
+    @Test
+    void shouldGetNearestHospital() {
+        Geometry distanceFromPoint = new GeometryFactory().createPoint(new Coordinate(1, 1)); //.buffer()
+
+
 //		List<HospitalEntity> allWithin = hospitalRepository.findAllWithin();
 //		assertThat(allWithin.get(0).getName()).isGreaterThanOrEqualTo("AwayPointHospital");
-	}
+    }
 
 
-	private void createHospital(String name, Point point){
-		HospitalEntity hospitalEntity = HospitalSpec.valid().name(name).location(point).build();
-		hospitalRepository.saveAndFlush(hospitalEntity);
-	}
+    private void createHospital(String name, Point point) {
+        HospitalEntity hospitalEntity = HospitalSpec.valid().name(name).latitude(48.10).longitude(11.5).build();
+        hospitalRepository.saveAndFlush(hospitalEntity);
+    }
 }

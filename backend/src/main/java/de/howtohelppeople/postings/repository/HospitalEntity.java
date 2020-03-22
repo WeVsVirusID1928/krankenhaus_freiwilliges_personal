@@ -1,8 +1,5 @@
 package de.howtohelppeople.postings.repository;
 
-import org.springframework.data.geo.Point;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +27,7 @@ import static de.howtohelppeople.postings.repository.HospitalEntity.TABLE_NAME;
         allocationSize = 1)
 @ToString(exclude = {"id"})
 public class HospitalEntity {
-    public static final String TABLE_NAME = "Hospitals";
+    public static final String TABLE_NAME = "hospitals";
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "default_generator")
@@ -41,17 +38,15 @@ public class HospitalEntity {
     private String zipCode;
     private String country;
     private String city;
-    private String latitude;
-    private String longitude;
+    private double latitude;
+    private double longitude;
     private String phoneNumber;
     private String faxNumber;
     private String email;
 
-    @Column(columnDefinition = "geometry")
-    private Point location;
 
     @Builder
-    public HospitalEntity(String name, String street, String zipCode, String country, String city, String latitude, String longitude, String phoneNumber, String faxNumber, String email, Point location) {
+    public HospitalEntity(String name, String street, String zipCode, String country, String city, double latitude, double longitude, String phoneNumber, String faxNumber, String email) {
         this.name = name;
         this.street = street;
         this.zipCode = zipCode;
@@ -62,6 +57,5 @@ public class HospitalEntity {
         this.phoneNumber = phoneNumber;
         this.faxNumber = faxNumber;
         this.email = email;
-        this.location = location;
     }
 }

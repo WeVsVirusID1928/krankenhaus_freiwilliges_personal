@@ -16,7 +16,11 @@ public interface HospitalRepository extends JpaRepository<HospitalEntity, String
      * @param bounds the geometry
      * @return SpatialEvents inside given geometry and with given filter for the title
      */
+//
+//    @Query(value = "SELECT se FROM HospitalEntity se WHERE within (se.location, :bounds) = true")
+//    public List<HospitalEntity> findAllWithin(@Param("bounds") Geometry bounds);
 
-	@Query(value = "SELECT se FROM HospitalEntity se WHERE within (se.location, :bounds) = true")
-	public List<HospitalEntity> findAllWithin(@Param("bounds") Geometry bounds);
+    List<HospitalEntity> findByZipCode(String zipCode);
+
+    List<HospitalEntity> findAll();
 }
