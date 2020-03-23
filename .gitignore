@@ -13,3 +13,6 @@ _windows/
 codestyles/
 find.xml
 .now/
+.DS_Store
+backend/local/postgres/
+.env

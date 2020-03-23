@@ -44,7 +44,8 @@ public class HospitalService {
         Collection<HospitalEntity> hospitals = hospitalRepository.findAll();
 
         return hospitals.stream().filter((hospital) -> {
-            return getDistanceMeters(lat, lon, hospital.getLatitude(), hospital.getLongitude()) <= distanceInMeters;
+            return false;
+            // return getDistanceMeters(lat, lon, hospital.getLatitude(), hospital.getLongitude()) <= distanceInMeters;
         }).collect(toList());
     }
 
