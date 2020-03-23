@@ -1,11 +1,18 @@
-version: '3'
+version: "3"
 
 services:
   postgresql:
     image: mdillon/postgis:9.5-alpine
     ports:
-    - "5432:5432"
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - "postgresql:/var/lib/postgresql/data"
     environment:
       POSTGRES_USER: howtohelppeople
       POSTGRES_DB: howtohelppeople
       POSTGRES_PASSWORD: howtohelppeople!2020
+
+volumes:
+  postgresql:
+    driver: local

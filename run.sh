@@ -2,12 +2,11 @@
 
 set -e -o pipefail
 
-function start-postgres()
-{
-  local compose_file="backend/local/docker-compose-postgresql.yaml"
-  docker-compose -p howtohelppeople-postgresql --file ${compose_file} up --build --detach
-}
-
+# function start-postgres()
+# {
+#   local compose_file="backend/local/docker-compose-postgresql.yaml"
+#   docker-compose -p howtohelppeople-postgresql --file ${compose_file} up --build --detach --force-recreate
+# }
 
 function build-jar()
 {
@@ -19,8 +18,8 @@ function start-application()
 {
 echo ${PWD}  
 local compose_file_root="docker-compose.yml"
-docker-compose -p howtohelppeople-postgresql --file ${compose_file_root} up --build --detach
+docker-compose -p howtohelppeople --file ${compose_file_root} up --build --detach --force-recreate
 }
-start-postgres
+#start-postgres
 build-jar
 start-application
