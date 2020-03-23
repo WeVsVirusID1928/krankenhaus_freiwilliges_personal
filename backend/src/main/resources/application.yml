@@ -1,5 +1,5 @@
 server:
-  port : 8443
+  port: 8443
 
 spring:
   application:
@@ -11,7 +11,7 @@ spring:
     password: ${DATABASE__PSQL_PASSWORD}
     platform: postgres
     continueOnError: true
-    url: jdbc:postgresql://localhost:5432/howtohelppeople
+    url: jdbc:postgresql://postgresql:5432/howtohelppeople
   jpa:
     database: postgresql
     show-sql: false
