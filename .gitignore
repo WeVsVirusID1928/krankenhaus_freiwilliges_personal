@@ -9,8 +9,8 @@ vcs.xml
 markdown.xml
 editor.xml
 colors.scheme.xml
-_windows/
-codestyles/
+**_windows/**
+**codestyles/**
 find.xml
 .now/
 .DS_Store
