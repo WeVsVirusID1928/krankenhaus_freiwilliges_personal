@@ -19,3 +19,8 @@ To stop all project related containers run:
 ```
 docker-compose -p howtohelppeople down
 ```
+
+
+## Seed data
+
+Currently the postgres database will be initialized with seed data through the SQL statements given in  `backend/src/main/resources/data-postgres.sql`. This is configured by `spring.datasource.initialization-mode` in the `application.yml` application configuration.
