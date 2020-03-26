@@ -32,9 +32,9 @@ public class PostingEntity {
     private String contact;
     private String areaCode;
 
-    @ManyToOne
-    @JoinColumn(name = "hospital_id", nullable = false)
-    @Setter
-    private HospitalEntity hospitalEntity;
+//     @ManyToOne
+//     @JoinColumn(name = "hospital_id", nullable = false)
+//     @Setter
+//     private HospitalEntity hospitalEntity;
 
 }

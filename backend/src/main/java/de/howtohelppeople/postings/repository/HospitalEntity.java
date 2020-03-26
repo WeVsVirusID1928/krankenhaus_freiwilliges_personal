@@ -41,12 +41,12 @@ public class HospitalEntity {
     private String faxNumber;
     private String email;
 
-    @OneToMany(
-            cascade = {CascadeType.PERSIST, CascadeType.PERSIST, CascadeType.REMOVE},
-            mappedBy = "hospitalEntity",
-            fetch = FetchType.EAGER
-    )
-    private Set<PostingEntity> postings;
+//     @OneToMany(
+//             cascade = {CascadeType.PERSIST, CascadeType.PERSIST, CascadeType.REMOVE},
+//             mappedBy = "hospitalEntity",
+//             fetch = FetchType.EAGER
+//     )
+//     private Set<PostingEntity> postings;
 
     @Builder
     public HospitalEntity(String name, String street, String zipCode, String country, String city, double latitude, double longitude, String phoneNumber, String faxNumber, String email) {
