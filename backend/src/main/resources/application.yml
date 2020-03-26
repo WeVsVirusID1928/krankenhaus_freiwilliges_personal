@@ -11,6 +11,7 @@ spring:
     password: ${DATABASE__PSQL_PASSWORD}
     platform: postgres
     continueOnError: true
+    initialization-mode: always
     url: jdbc:postgresql://postgresql:5432/howtohelppeople
   jpa:
     database: postgresql
