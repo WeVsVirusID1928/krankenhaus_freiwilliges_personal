@@ -23,7 +23,8 @@ public class PostingEntity {
     public static final String TABLE_NAME = "posting";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "default_generator")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     private String title;
