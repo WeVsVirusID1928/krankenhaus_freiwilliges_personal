@@ -146,3 +146,9 @@ export const registerHelpingHand = async (
     // some validation?
     return defaultClient.post('/register', person);
 };
+
+export const getAllLocations = async (): Promise<any> => {
+    return defaultClient.get('/api/hospital/all')
+    .then(response => response.data)
+    .catch(error => console.log("trouble fetching hospitals from api", error));
+};

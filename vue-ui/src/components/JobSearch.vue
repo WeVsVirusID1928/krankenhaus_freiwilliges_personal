@@ -53,7 +53,7 @@
             </div>
             <template v-else>
                 <div class="layout layout--wrap">
-                    <div class="flex xs12 sm12 md6"v-for="job in jobs">
+                    <div class="flex xs12 sm12 md6" v-for="job in jobs">
                         <div class="job-search__result">
                             <div class="job-search__result-header">
                                 <h2 class="job-search__result-title">{{job.title}}</h2>
@@ -69,6 +69,24 @@
                     </div>
                 </div>
             </template>
+            <!-- TODO: move elsewhere, added here to test api -->
+            <div class="flex xs12 sm4">
+                <btn :label="'Alle aktiven Locations'" @click="getAllLocations()"/>
+            </div>
+            <div class="layout layout--wrap">
+                    <div class="flex xs12 sm12 md6" v-for="location in allLocations" :key="location.id">
+                        <div class="job-search__result">
+                            <div class="job-search__result-header">
+                                <h2 class="job-search__result-title">{{location.name}}</h2>
+                                <div class="job-search__result-distance"><font-awesome-icon icon="route" :color="'#fff'"/>{{location.city}}</div>
+                            </div>
+                            <div class="job-search__result-location">
+                                <font-awesome-icon icon="clinic-medical" :color="'#00c0ff'" />{{location.street}}, {{location.zipCode}} {{location.city}}, {{location.phoneNumber}}
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- -->
         </div>
     </div>
 </template>
@@ -79,7 +97,7 @@
     import { latLng, latLngBounds } from "leaflet";
     import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
     import { ChipValue, Job, JobLocation } from '@/interfaces/types';
-    import { getAvailableJobs, getJobLocations } from '@/services/apiService';
+    import { getAvailableJobs, getJobLocations, getAllLocations } from '@/services/apiService';
     import { Icon } from 'leaflet';
 
     type D = Icon.Default & {
@@ -112,6 +130,7 @@
         maxDistance: number = 20;
         jobs: Job[] = [];
         jobLocations: JobLocation[] = [];
+        allLocations: JobLocation[] = [];
         skillSet: ChipValue[] = [
             { label: 'Logistik', key: 'logistics' },
             { label: 'Desinfektion', key: 'desinfection' },
@@ -126,6 +145,10 @@
 
         getSkillLabels(keys: string[]): string  {
             return this.skillSet.filter(skill => keys.includes(skill.key)).map(skill => skill.label).join(', ');
+        }
+
+        getAllLocations(){
+            getAllLocations().then(locations => this.allLocations = locations);
         }
 
         created() {
