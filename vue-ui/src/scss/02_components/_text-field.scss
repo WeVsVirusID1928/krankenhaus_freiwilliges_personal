@@ -5,7 +5,7 @@
   transition: $defaultTransition;
 
   input {
-    background: $backgroundColor;
+    background: $white;
     border: 2px solid $textColor;
     color: inherit;
     outline: none !important;
@@ -20,7 +20,7 @@
       &::-webkit-input-placeholder {
         font-size: 0.7rem;
         text-transform: uppercase;
-    }
+      }
     }
   }
   label {
@@ -37,12 +37,12 @@
   &__info {
     color: $textColor;
     display: flex;
-    font-size: 80%;
-    margin: 5px 0 10px 0;
+    font-size: 0.65rem;
+    margin: 5px 0;
     min-height: 16px;
-    padding: 0 10px;
   }
-  &__hint, &__error-messages {
+  &__hint,
+  &__error-messages {
     flex-grow: 1;
     text-overflow: ellipsis;
   }
@@ -89,7 +89,6 @@
   &--append-icon {
     input {
       padding-right: 40px;
-
     }
     .text-field__append-icon {
       display: block;
@@ -99,12 +98,12 @@
     input {
       background: $inputBackgroundColor;
       border-color: $themeColor;
-      box-shadow: 1px 1px 0 $themeColor, -1px -1px 0 $themeColor, 1px -1px 0 $themeColor, -1px 1px 0 $themeColor;
+      box-shadow: 1px 1px 0 $themeColor, -1px -1px 0 $themeColor,
+        1px -1px 0 $themeColor, -1px 1px 0 $themeColor;
 
       &.inverse {
         background-color: $white;
       }
-
     }
   }
   &--error {

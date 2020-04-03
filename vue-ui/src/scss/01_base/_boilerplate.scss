@@ -3,7 +3,7 @@
 
 html,
 body {
-  background: $backgroundColor;
+  background: $white;
   color: $textColor;
   font-family: $defaultFontFamily;
   font-size: $defaultFontSize;
@@ -94,7 +94,7 @@ body {
 }
 
 .logo {
-  width: 50%;
+  width: 30%;
 }
 
 @media screen and (max-width: 800px) {

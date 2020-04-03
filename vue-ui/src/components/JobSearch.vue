@@ -1,6 +1,6 @@
 <template>
     <div class="job-search">
-        <h1>Aktuelle Positionen</h1>
+        <h2>Finde heraus wo in deinem Umkreis Hilfe benötigt wird:</h2>
         <div class="job-search__controls" v-if="!hideControls">
             <div class="layout layout--wrap">
                 <div class="flex xs12 sm4">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="job-search__results layout layout--wrap margin-top">
+        <div class="job-search__results layout layout--wrap">
             <l-map style="height: 400px; width: 100%;"
                 :zoom="zoom"
                 :center="center"
@@ -47,7 +47,7 @@
             <div class="layout" v-if="zipCode.length < 4 || maxDistance < 1">
                 <div class="flex xs12">
                     <p>
-                        Bitte geben Sie zuerst eine Postleitzahl und die gewünschte maximale Entfernung ein.
+                        Bitte gebe deine Postleitzahl und die gewünschte maximale Entfernung ein.
                     </p>
                 </div>
             </div>
