@@ -27,7 +27,7 @@ import { JobLocation } from "../interfaces/types";
 @Component
 export default class SearchResult extends Vue {
   @Prop() location!: JobLocation;
-  @Prop() teaserIcon: string;
+  @Prop() teaserIcon?: string;
 }
 </script>
 
