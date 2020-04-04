@@ -3,9 +3,7 @@
 .job-search {
 
   &__result {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    border-radius: $defaultBorderRadius;
     margin: $spacing / 2 0;
     overflow: hidden;
     position: relative;
@@ -23,7 +21,7 @@
   }
   &__result-distance {
     background: $themeColor;
-    border-bottom-left-radius: $defaultFontSize;
+    border-bottom-left-radius: $defaultBorderRadius;
     color: $textColorInv;
     padding: $spacing / 2 $spacing;
 

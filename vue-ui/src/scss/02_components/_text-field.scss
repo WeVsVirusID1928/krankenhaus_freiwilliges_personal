@@ -7,6 +7,7 @@
   input {
     background: $white;
     border: 2px solid $textColor;
+    border-radius: $defaultBorderRadius;
     color: inherit;
     outline: none !important;
     padding: 26px 10px 12px 10px;

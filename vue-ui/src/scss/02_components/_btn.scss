@@ -3,11 +3,13 @@
 .btn {
   background: $themeColor;
   color: $textColorInv;
+  font-size: 0.875rem;
   cursor: pointer;
   padding: $spacing / 2 $spacing;
   position: relative;
   text-align: center;
   transition: $defaultTransition;
+  border-radius: $defaultBorderRadius;
 
   &:hover {
     background: $themeColorDarken;
