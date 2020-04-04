@@ -57,20 +57,7 @@
             </div>
             <template v-else>
                 <div class="layout layout--wrap">
-                    <div class="flex xs12 sm12 md6" v-for="job in jobs">
-                        <div class="job-search__result">
-                            <div class="job-search__result-header">
-                                <h2 class="job-search__result-title">{{job.title}}</h2>
-                                <div class="job-search__result-distance"><font-awesome-icon icon="route" :color="'#fff'"/>{{job.location.distance}}</div>
-                            </div>
-                            <div class="job-search__result-detail">
-                                <font-awesome-icon icon="clipboard-check" :color="'#00c0ff'"/>{{getSkillLabels(job.skillSet)}}
-                            </div>
-                            <div class="job-search__result-detail">
-                                <font-awesome-icon icon="clinic-medical" :color="'#00c0ff'" />{{job.location.name}} / {{job.location.city}}
-                            </div>
-                        </div>
-                    </div>
+                    <search-result class="flex xs12 sm12 md6" v-for="job in jobs" :key="job.id" :job="job" :location="job.location" :teaserIcon="'map-marker-alt'" /> 
                 </div>
             </template>
             <div class="layout layout--wrap">
@@ -122,20 +109,10 @@
         jobs: Job[] = [];
         jobLocations: JobLocation[] = [];
         allLocations: JobLocation[] = [];
-        skillSet: ChipValue[] = [
-            { label: 'Logistik', key: 'logistics' },
-            { label: 'Desinfektion', key: 'desinfection' },
-            { label: 'Sicherheit | Organisation', key: 'organisation' },
-            { label: 'Verpflegung', key: 'catering' }
-        ];
         map: any;
 
         latLng(lat: number, lng: number) {
             return latLng(lat,lng);
-        }
-
-        getSkillLabels(keys: string[]): string  {
-            return this.skillSet.filter(skill => keys.includes(skill.key)).map(skill => skill.label).join(', ');
         }
 
         getAllLocations(){

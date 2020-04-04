@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHospital, faClipboardList, faClipboardCheck, faClinicMedical, faRoute, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHospital, faClipboardList, faClipboardCheck, faClinicMedical, faRoute, faMapMarkerAlt, faPhoneAlt, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import './registerServiceWorker'
 import router from './router'
@@ -13,7 +13,7 @@ import ChipsSelect from '@/components/global/ChipsSelect.vue';
 
 Vue.config.productionTip = false;
 
-library.add(faHospital, faClipboardList, faClipboardCheck, faClinicMedical, faRoute, faMapMarkerAlt, faPhoneAlt);
+library.add(faHospital, faClipboardList, faClipboardCheck, faClinicMedical, faRoute, faMapMarkerAlt, faPhoneAlt, faStar);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.component('btn', Btn);
