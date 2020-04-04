@@ -1,10 +1,12 @@
 @import "../01_base/variables";
 
 .job-search {
-
   &__result {
+    background: $themeColorBrighten;
     border-radius: $defaultBorderRadius;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: $spacing / 2 0;
+    padding-bottom: 1rem;
     overflow: hidden;
     position: relative;
   }
@@ -15,27 +17,33 @@
   &__result-title {
     color: $themeColor;
     flex-grow: 1;
-    font-size: $defaultFontSize;
+    font-size: 0.875rem;
     margin: 0;
-    padding: $spacing / 2 $spacing;
+    padding: 0.5rem 0.8rem;
   }
   &__result-distance {
     background: $themeColor;
     border-bottom-left-radius: $defaultBorderRadius;
     color: $textColorInv;
-    padding: $spacing / 2 $spacing;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.8rem;
+    height: 2.5rem;
 
     .svg-inline--fa {
       margin-right: $spacing / 2;
+      color: $white;
     }
   }
 
-  &__result-location, &__result-skillset {
-    padding: $spacing / 2 $spacing;
+  &__result-detail {
+    padding: 0.25rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    margin: 0;
 
     .svg-inline--fa {
-      margin-right: $spacing / 2;
+      margin-right: 0.5rem;
+      width: 1rem;
     }
   }
-
 }
