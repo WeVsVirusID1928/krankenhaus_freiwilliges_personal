@@ -9,14 +9,14 @@
         </div>
       </div>
       <template v-if="job">
-      <p class="job-search__result-detail">
-        <font-awesome-icon icon="star" />
-        {{job.title}}
-      </p>
-      <p class="job-search__result-detail">
-        <font-awesome-icon icon="clipboard-check" />
-        {{getSkillLabels(job.skillSet)}}
-      </p>
+        <p class="job-search__result-detail">
+          <font-awesome-icon icon="star" />
+          {{job.title}}
+        </p>
+        <p class="job-search__result-detail">
+          <font-awesome-icon icon="clipboard-check" />
+          {{getSkillLabels(job.skillSet)}}
+        </p>
       </template>
       <p class="job-search__result-detail">
         <font-awesome-icon icon="clinic-medical" />
@@ -34,23 +34,20 @@
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 import { JobLocation, Job, ChipValue } from "../interfaces/types";
+import { SKILL_SET } from "@/constants.ts"
+
 @Component
 export default class SearchResult extends Vue {
   @Prop() location!: JobLocation;
   @Prop() job?: Job;
   @Prop() teaserIcon?: string;
 
-  skillSet: ChipValue[] = [
-            { label: 'Logistik', key: 'logistics' },
-            { label: 'Desinfektion', key: 'desinfection' },
-            { label: 'Sicherheit | Organisation', key: 'organisation' },
-            { label: 'Verpflegung', key: 'catering' }
-        ];
-
-  getSkillLabels(keys: string[]): string  {
-            return this.skillSet.filter(skill => keys.includes(skill.key)).map(skill => skill.label).join(', ');
-        }
-
+  getSkillLabels(keys: string[]): string {
+    return SKILL_SET
+      .filter(skill => keys.includes(skill.key))
+      .map(skill => skill.label)
+      .join(", ");
+  }
 }
 </script>
 
