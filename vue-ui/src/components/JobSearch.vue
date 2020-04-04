@@ -3,22 +3,26 @@
         <h2>Finde heraus wo in deinem Umkreis Hilfe benötigt wird:</h2>
         <div class="job-search__controls" v-if="!hideControls">
             <div class="layout layout--wrap">
-                <div class="flex xs12 sm4">
+                <div class="flex xs12 sm3">
                     <text-field
                             :label="'PLZ'"
                             :max-length="5"
                             v-model="zipCode"
                     />
                 </div>
-                <div class="flex xs12 sm4">
+                <div class="flex xs12 sm2">
                     <text-field
                             :label="'Entfernung in km'"
                             :type="'number'"
+                            :hint="'max. Entfernung'"
                             v-model="maxDistance"
                     />
                 </div>
-                <div class="flex xs12 sm4">
+                <div class="flex xs12 sm3">
                     <btn :label="'Suchen'" @click="search()"/>
+                </div>
+                <div class="flex xs12 sm4">
+                    <btn :label="'Alle aktiven Locations'" @click="getAllLocations()"/>
                 </div>
             </div>
         </div>
