@@ -9,8 +9,8 @@ const jobLocations: JobLocation[] = [
         zipCode: '10785',
         city: 'Berlin',
         country: 'Deutschland',
-        lat: 52.5031338,
-        lng: 13.3626897,
+        latitude: 52.5031338,
+        longitude: 13.3626897,
         phone: '123456',
         fax: '123456',
         email: 'a@b.de',
@@ -18,12 +18,12 @@ const jobLocations: JobLocation[] = [
     },
     {
         name: 'Charité – Universitätsmedizin Berlin',
-        street: 'Charitéplatz 1',
+        street: 'Charitéplatitudez 1',
         zipCode: '10117',
         city: 'Berlin',
         country: 'Deutschland',
-        lat: 52.5250854,
-        lng: 13.3755031,
+        latitude: 52.5250854,
+        longitude: 13.3755031,
         phone: '123456',
         fax: '123456',
         email: 'a@b.de',
@@ -35,8 +35,8 @@ const jobLocations: JobLocation[] = [
         zipCode: '10115',
         city: 'Berlin',
         country: 'Deutschland',
-        lat: 52.5264531,
-        lng: 13.3956137,
+        latitude: 52.5264531,
+        longitude: 13.3956137,
         phone: '123456',
         fax: '123456',
         email: 'a@b.de',
@@ -48,8 +48,8 @@ const jobLocations: JobLocation[] = [
         zipCode: '10115',
         city: 'Berlin',
         country: 'Deutschland',
-        lat: 52.5349771,
-        lng: 13.3676693,
+        latitude: 52.5349771,
+        longitude: 13.3676693,
         phone: '123456',
         fax: '123456',
         email: 'a@b.de',
@@ -61,8 +61,8 @@ const jobLocations: JobLocation[] = [
         zipCode: '12683',
         city: 'Berlin',
         country: 'Deutschland',
-        lat: 52.5192015,
-        lng: 13.5653362,
+        latitude: 52.5192015,
+        longitude: 13.5653362,
         phone: '123456',
         fax: '123456',
         email: 'a@b.de',
@@ -147,7 +147,7 @@ export const registerHelpingHand = async (
     return defaultClient.post('/register', person);
 };
 
-export const getAllLocations = async (): Promise<any> => {
+export const getAllLocations = async (): Promise<JobLocation> => {
     return defaultClient.get('/api/hospital/all')
     .then(response => response.data)
     .catch(error => console.log("trouble fetching hospitals from api", error));

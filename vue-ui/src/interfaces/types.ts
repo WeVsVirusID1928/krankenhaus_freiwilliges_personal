@@ -18,8 +18,8 @@ export interface JobLocation {
     zipCode: string;
     city: string;
     country: string;
-    lat: number;
-    lng: number;
+    latitude: number;
+    longitude: number;
     phone: string;
     fax: string;
     email: string;

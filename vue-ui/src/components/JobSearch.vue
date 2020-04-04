@@ -26,28 +26,8 @@
                 </div>
             </div>
         </div>
-        <div class="job-search__results layout layout--wrap">
-            <l-map style="height: 400px; width: 100%;"
-                :zoom="zoom"
-                :center="center"
-                ref="myMap">
-                <l-tile-layer
-                        :url="url"
-                        :attribution="attribution"
-                />
-                <l-marker :lat-lng="latLng(jobLocation.lat, jobLocation.lng)" :key="`location_${index}`" v-for="(jobLocation, index) in jobLocations">
-<!--                    <l-popup>-->
-<!--                        <div @click="innerClick">-->
-<!--                            I am a popup-->
-<!--                            <p v-show="showParagraph">-->
-<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque-->
-<!--                                sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.-->
-<!--                                Donec finibus semper metus id malesuada.-->
-<!--                            </p>-->
-<!--                        </div>-->
-<!--                    </l-popup>-->
-                </l-marker>
-            </l-map>
+        <div class="layout layout--wrap">
+            <job-map :jobLocations="jobLocations" :zoomLevel="zoomLevel"></job-map>
             <div class="layout" v-if="zipCode.length < 4 || maxDistance < 1">
                 <div class="flex xs12">
                     <p>
@@ -70,53 +50,34 @@
 <script lang="ts">
     import Vue from 'vue';
     import { Component, Prop } from 'vue-property-decorator';
-    import { latLng, latLngBounds } from "leaflet";
-    import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
     import { ChipValue, Job, JobLocation } from '@/interfaces/types';
     import { getAvailableJobs, getJobLocations, getAllLocations } from '@/services/apiService';
     import SearchResult from '@/components/SearchResult.vue';
-    import { Icon } from 'leaflet';
-
-    type D = Icon.Default & {
-        _getIconUrl: string;
-    };
-
-    delete (Icon.Default.prototype as D)._getIconUrl;
-    Icon.Default.mergeOptions({
-        iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-        iconUrl: require('leaflet/dist/images/marker-icon.png'),
-        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-    });
+    import JobMap from '@/components/JobMap.vue';
 
     @Component({
         components: {
-            LMap,
-            LTileLayer,
-            LMarker,
-            SearchResult
+            SearchResult,
+            JobMap
         }
     })
     export default class App extends Vue {
         @Prop({ default: false }) hideControls!: boolean;
         @Prop({ default: false }) initZipCode!: string;
         @Prop({ default: false }) initMaxDistance!: number;
-        zoom: number = 12;
-        center: any = latLng(52.5172576,13.4050284);
-        url: string = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-        attribution: string = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
         zipCode: string = '';
         maxDistance: number = 20;
         jobs: Job[] = [];
-        jobLocations: JobLocation[] = [];
+        jobLocations?: JobLocation[] = [];
         allLocations: JobLocation[] = [];
-        map: any;
+        zoomLevel: number = 12;
 
-        latLng(lat: number, lng: number) {
-            return latLng(lat,lng);
-        }
-
-        getAllLocations(){
-            getAllLocations().then(locations => this.allLocations = locations);
+        getAllLocations() {
+            getAllLocations().then(locations => {
+                this.allLocations = locations;
+                this.jobLocations = locations;
+                this.zoomLevel = 5;
+                });
         }
 
         created() {
@@ -134,7 +95,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-    @import '../../node_modules/leaflet/dist/leaflet.css';
-</style>
