@@ -21,6 +21,8 @@ public interface HospitalRepository extends JpaRepository<HospitalEntity, String
 //    public List<HospitalEntity> findAllWithin(@Param("bounds") Geometry bounds);
 
     List<HospitalEntity> findByZipCode(String zipCode);
+    
+    HospitalEntity findById(Long id);
 
     List<HospitalEntity> findAll();
 }

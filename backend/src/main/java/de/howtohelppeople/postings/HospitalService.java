@@ -39,6 +39,11 @@ public class HospitalService {
         return hospitalRepository.findAll();
     }
 
+    public HospitalEntity getHospitalById(Long id) {
+        LOGGER.debug("Get hospital for Id" + id);
+        return hospitalRepository.findById(id);
+    }
+
     public List<HospitalEntity> getAllHospitalsWithDistance(double lat, double lon, double distanceInMeters) {
         LOGGER.debug("Getting all hospitals");
         Collection<HospitalEntity> hospitals = hospitalRepository.findAll();
