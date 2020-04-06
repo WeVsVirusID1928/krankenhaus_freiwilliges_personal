@@ -152,3 +152,9 @@ export const getAllLocations = async (): Promise<JobLocation> => {
     .then(response => response.data)
     .catch(error => console.log("trouble fetching hospitals from api", error));
 };
+
+export const getLocationById = async (id: number): Promise<JobLocation> => {
+    return defaultClient.get(`/api/hospital/${id}`)
+    .then(response => response.data)
+    .catch(error => console.log(`trouble fetching hospital with id ${id} from api`, error));
+};
