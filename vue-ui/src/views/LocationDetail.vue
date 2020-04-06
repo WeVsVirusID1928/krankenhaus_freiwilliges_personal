@@ -12,6 +12,7 @@
       <font-awesome-icon icon="phone-alt" />
       {{location.phoneNumber}}
     </p>
+    <course-iframe :course="getCourseSrc()"></course-iframe>
   </div>
 </template>
 
@@ -19,11 +20,20 @@
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 import { getLocationById } from "@/services/apiService";
-import { JobLocation } from "../interfaces/types";
+import { JobLocation } from "@/interfaces/types";
+import CourseIframe from "@/components/CourseIframe.vue";
 
-@Component
+@Component({
+  components: {
+    CourseIframe
+  }
+})
 export default class LocationDetail extends Vue {
   location?: JobLocation | {} = {};
+
+  getCourseSrc() {
+    return 'https://helferhaende.it-servicehost.de/mod/hvp/embed.php?id=86';
+  }
 
   mounted() {
     getLocationById(this.$route.params.id).then(
@@ -34,9 +44,8 @@ export default class LocationDetail extends Vue {
 </script>
 
 <style lang="scss">
-
 .location-detail {
-     &__address {
+  &__address {
     padding: 0.25rem 1rem;
     font-size: 0.75rem;
     line-height: 1.2rem;
