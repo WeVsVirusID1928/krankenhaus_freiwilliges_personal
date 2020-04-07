@@ -147,13 +147,13 @@ export const registerHelpingHand = async (
     return defaultClient.post('/register', person);
 };
 
-export const getAllLocations = async (): Promise<JobLocation> => {
+export const getAllLocations = async (): Promise<JobLocation[]> => {
     return defaultClient.get('/api/hospital/all')
     .then(response => response.data)
     .catch(error => console.log("trouble fetching hospitals from api", error));
 };
 
-export const getLocationById = async (id: number): Promise<JobLocation> => {
+export const getLocationById = async (id: string): Promise<JobLocation> => {
     return defaultClient.get(`/api/hospital/${id}`)
     .then(response => response.data)
     .catch(error => console.log(`trouble fetching hospital with id ${id} from api`, error));

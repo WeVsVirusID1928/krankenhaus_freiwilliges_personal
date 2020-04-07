@@ -49,7 +49,7 @@ export default class JobMap extends Vue {
   @Prop({ default: 12 }) zoomLevel?: number;
   @Prop() jobLocations?: JobLocation[];
   @Prop({ default: () => latLng(52.5172576, 13.4050284) })
-  center: LatLng;
+  center?: LatLng;
 
   url: string = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
   attribution: string =

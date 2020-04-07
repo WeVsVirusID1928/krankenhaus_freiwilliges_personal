@@ -10,7 +10,7 @@ import { Component, Prop } from "vue-property-decorator";
 
 @Component
 export default class CourseIframe extends Vue {
-  @Prop({default: ''}) course: string;
+  @Prop({default: ''}) course?: string;
 }
 </script>
 

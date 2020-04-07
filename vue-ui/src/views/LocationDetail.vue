@@ -37,7 +37,7 @@ export default class LocationDetail extends Vue {
 
   mounted() {
     getLocationById(this.$route.params.id).then(
-      location => (this.location = location)
+      location => (this.location = location as JobLocation)
     );
   }
 }
