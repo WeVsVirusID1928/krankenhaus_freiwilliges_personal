@@ -6,7 +6,6 @@ services:
       context: ./vue-ui
       dockerfile: Dockerfile
     depends_on:
-      - temporary_backend
       - backend
     ports:
       - "8080:8080"
@@ -17,21 +16,6 @@ services:
     entrypoint: "/bin/bash -c"
     volumes:
       - ./vue-ui/src:/app/src
-
-  temporary_backend:
-    build:
-      context: ./temporary_backend
-      dockerfile: Dockerfile
-    ports:
-      - "1357:1357"
-      - "1369:1369"
-    entrypoint: "/bin/bash -c"
-    volumes:
-      - ./temporary_backend/:/app
-    command:
-      - |
-        npm ci
-        npm run dev
 
   backend:
     build:
