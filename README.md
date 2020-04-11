@@ -24,3 +24,10 @@ docker-compose -p howtohelppeople down
 ## Seed data
 
 Currently the postgres database will be initialized with seed data through the SQL statements given in  `backend/src/main/resources/data-postgres.sql`. This is configured by `spring.datasource.initialization-mode` in the `application.yml` application configuration.
+
+
+## Credits
+<!---
+Some credits may be legally required by license, don't remove
+--->
+* German zip code data by [© OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
