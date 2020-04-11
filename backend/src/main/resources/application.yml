@@ -8,7 +8,7 @@ spring:
     add-mappings: false
   datasource:
     username: howtohelppeople
-    password: ${DATABASE__PSQL_PASSWORD}
+    password: ${DATABASE_PSQL_PASSWORD}
     platform: postgres
     continueOnError: true
     initialization-mode: always

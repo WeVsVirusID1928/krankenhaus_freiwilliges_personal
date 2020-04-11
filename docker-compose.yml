@@ -40,7 +40,7 @@ services:
     ports:
       - "8443:8443"
     environment:
-      DATABASE__PSQL_PASSWORD: "${POSTGRES_PASSWORD}"
+      DATABASE_PSQL_PASSWORD: "${POSTGRES_PASSWORD}"
 
   postgresql:
     image: mdillon/postgis:9.5-alpine
